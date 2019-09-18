@@ -1,0 +1,270 @@
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        background-color: transparent;
+        overflow: hidden;
+    }
+
+    .box1 {
+        /* border: 1px solid red; */
+        display: inline-block;
+        margin-left: -52px;
+    }
+
+    .box2 {
+        vertical-align: top;
+        /* border: 1px solid lime; */
+        display: inline-block;
+        margin-left: -57px;
+        margin-top: -100px;
+        margin-right: -2px;
+    }
+
+    .grid-cont {
+        display: inline-block;
+    }
+
+    .grid-container {
+        position: absolute;
+        display: grid;
+        margin-top: -13px;
+        display: inline-block;
+    }
+
+    /* .grid-container2 {
+        position: absolute;
+        left: 150px;
+        display: grid;
+        margin-top: 75px;
+    }
+
+    .grid-container3 {
+        position: absolute;
+        left: 300px;
+        display: grid;
+        margin-top: -13px;
+    }
+
+    .grid-container4 {
+        position: absolute;
+        left: 450px;
+        display: grid;
+        margin-top: 75px;
+    } */
+
+    .grid-container-odd {
+        display: grid;
+        z-index: -2;
+    }
+
+    .grid-item {
+        /* outline: 1px solid red; */
+        height: 174px;
+    }
+
+    .grid-item svg {
+        fill: red;
+        stroke: red;
+        stroke-width: 0;
+    }
+
+    /* .grid-container2 .grid-item svg, .grid-container4 .grid-item svg {
+        fill: cyan;
+    } */
+
+    .grid-item svg:hover {
+        /* fill: red; */
+        stroke: black;
+        stroke-width: 1px;
+    }
+
+    .corner-bottom-left {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+    .corner-bottom-right {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+    .corner-top-left {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        border-left: 2px solid white;
+        border-top: 2px solid white;
+    }
+    .corner-top-right {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        border-right: 2px solid white;
+        border-top: 2px solid white;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 180px;
+        left: 45%;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .container {
+        position: absolute;
+        z-index: 1;
+        width: 150vw;
+        height: 100vh;
+        top: -100px;
+        left: -175px;
+    }
+
+    .container2 {
+        position: absolute;
+        z-index: 2;
+        width: 150vw;
+        height: 100vh;
+        left: -27px;
+        top: -12px;
+    }
+
+    .glitch {
+        position: relative;
+        top: 40%;
+        margin: 0 auto;
+        color: white;
+        font-size: 80px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .glitch:before, .glitch:after {
+        content: 'ALEXANDER EGE';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        background-color: transparent;
+    }
+
+    .glitch:before {
+        left: 8px;
+        text-shadow: 4px 0 #0ffbf9;
+        animation: effect 5s infinite linear;
+    }
+    .glitch:after {
+        left: 4px;
+        text-shadow: -4px 0 #f14492;
+        animation: effect 3s infinite linear;
+    }
+
+    @-webkit-keyframes effect {
+        0% {
+            clip: rect(55px, 9999px, 56px, 0);
+        }
+        5% {
+            clip: rect(47px, 9999px, 30px, 0);
+        }
+        10% {
+            clip: rect(33px, 9999px, 36px, 0);
+        }
+        15% {
+            clip: rect(35px, 9999px, 9px, 0);
+        }
+        20% {
+            clip: rect(63px, 9999px, 59px, 0);
+        }
+        25% {
+            clip: rect(96px, 9999px, 98px, 0);
+        }
+        30% {
+            clip: rect(48px, 9999px, 77px, 0);
+        }
+        35% {
+            clip: rect(50px, 9999px, 34px, 0);
+        }
+        40% {
+            clip: rect(60px, 9999px, 72px, 0);
+        }
+        45% {
+            clip: rect(10px, 9999px, 81px, 0);
+        }
+        50% {
+            clip: rect(2px, 9999px, 60px, 0);
+        }
+        55% {
+            clip: rect(23px, 9999px, 89px, 0);
+        }
+        60% {
+            clip: rect(76px, 9999px, 91px, 0);
+        }
+        65% {
+            clip: rect(62px, 9999px, 30px, 0);
+        }
+        70% {
+            clip: rect(60px, 9999px, 73px, 0);
+        }
+        75% {
+            clip: rect(60px, 9999px, 87px, 0);
+        }
+        80% {
+            clip: rect(2px, 9999px, 14px, 0);
+        }
+        85% {
+            clip: rect(73px, 9999px, 50px, 0);
+        }
+        90% {
+            clip: rect(79px, 9999px, 70px, 0);
+        }
+        95% {
+            clip: rect(79px, 9999px, 70px, 0);
+        }
+        100% {
+            clip: rect(17px, 9999px, 79px, 0);
+        }
+    }
+
+#main_content {
+    border: 1px solid white; 
+    min-height: 80vh;
+}
+
+.container {
+    background-color: transparent;
+    color: white;
+}
+
+/* Projects */
+.project-container {
+    text-align: center;
+}
+
+.project-box {
+    border: 2px solid white;
+    width: 33%;
+    height: 300px;
+    display: inline-block;
+}
