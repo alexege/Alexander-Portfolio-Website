@@ -2,7 +2,100 @@ $(document).ready(function(){
     console.log("Document loaded successfully");
 
 
+    function wave(){
+        var random_color_1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_3 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_4 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_5 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_6 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_7 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        // var random_color_8 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+
+        $(".row1").css({"fill" : random_color_1});
+        $(".row2").css({"fill" : random_color_1});
+        $(".row3").css({"fill" : random_color_1});
+        $(".row4").css({"fill" : random_color_1});
+        $(".row5").css({"fill" : random_color_1});
+        $(".row6").css({"fill" : random_color_1});
+        $(".row7").css({"fill" : random_color_1});
+        $(".row8").css({"fill" : random_color_1});
+    }
+
+    wave();
+
+
+    function rainbowTrigger(){
+        for(var i = 1; i < 9; i++){
+            var random_r = parseInt(Math.random() * 255);
+            console.log("random red: " + random_r);
+            var random_g = parseInt(Math.random() * 255);
+            console.log("random green: " + random_g);
+            var random_b = parseInt(Math.random() * 255);
+            console.log("random blue: " + random_b);
+            console.log("--------------------------------------");
+            // $(`.row${i}`).css({"fill" : `rgb(${random_r}, ${random_g}, ${random_b}`});
+            
+            var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+            $(`.row${i}`).css({"fill" : random_color});
+        }
+    }
+
+    // $(".hexagon").hover(function(){
+    //     // console.log("Hovering!");
+    //     // var random_r = parseInt(Math.random() * 255);
+    //     // console.log("random red: " + random_r);
+    //     // var random_g = parseInt(Math.random() * 255);
+    //     // console.log("random green: " + random_g);
+    //     // var random_b = parseInt(Math.random() * 255);
+    //     // console.log("random blue: " + random_b);
+    //     // console.log("--------------------------------------");
+    //     // $(this).css({"fill" : `rgb(${random_r}, ${random_g}, ${random_b}`});
+
+    //     // var colors = ['#ff0000', '#00ff00', '#0000ff'];
+    //     // var random_color = colors[Math.floor(Math.random() * colors.length)];
+    //     // $(this).css({"fill": random_color});
+        
+    //     var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    //     $(this).css({"fill": random_color});
+    // });
+
+    // rainbowTrigger();
+
+
+    // var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    // $(".hexagon").css({"stroke" : random_color});
+
+
+
+
+    // loadAtRandom();
+
+    function loadAtRandom(){
+        var count = 0; 
+        var maxDelay = 2500;
+        var minSpeed = 1500;
+        var maxSpeed = 2000;
+        var fadeTo = 1;
     
+        $('.hexagon').each(function(){
+            var delay = Math.ceil(Math.random() * maxDelay);
+            var speed = maxSpeed + Math.ceil(Math.random() * (minSpeed - maxSpeed));
+            count++;
+            fadeTo = Math.random(0.5, 1);
+
+            $(this).delay(delay).fadeTo(speed, fadeTo, function(){
+                count--;
+                if (count == 0){
+                    onFinish();
+                }
+            });
+        });
+        function onFinish() {
+            loadContent();
+        }  
+      }
+
 
 
 

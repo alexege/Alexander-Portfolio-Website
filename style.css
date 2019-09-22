@@ -7,9 +7,38 @@
     body{
         background-color: transparent;
         overflow: hidden;
-        background-color: #06aae2;
+        background-color: black;
     }
 
+    .hexagon {
+        /* opacity: 0; */
+        fill: white;
+        stroke:black;
+        stroke-width: 2;
+        /* stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 5s linear forwards; */
+    }
+      
+      /* @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      } */
+
+    .hexagon:hover {
+        animation-name: fade;
+        animation-duration: 15s;
+    }
+
+    @-webkit-keyframes fade {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
     svg:hover {
         fill: white;
     }
@@ -26,37 +55,31 @@
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh - 87.5px - 175px);
-        fill: red;
     }
     .hex3 {
         position: absolute;
         left: calc(50% - 100px + 150px);
         top: calc(50vh - 87.5px - 87.5px);
-        fill: red;
     }
     .hex4 {
         position: absolute;
         left: calc(50% - 100px + 150px);
         top: calc(50vh);
-        fill: red;
     }
     .hex5 {
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh + 87.5px);
-        fill: red;
     }
     .hex6 {
         position: absolute;
         left: calc(50% - 100px - 150px);
         top: calc(50vh);
-        fill: red;
     }
     .hex7 {
         position: absolute;
         left: calc(50% - 100px - 150px);
         top: calc(50vh - 175px);
-        fill: red;
     }
 
 /* Ring 3 */
@@ -64,188 +87,157 @@
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh - 87.5px - 350px);
-        fill: black;
     }
     .hex9 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh - 87.5px - 262.5px);
-        fill: black;
     }
     .hex10 {
         position: absolute;
         left: calc(50% + 50px + 150px);
         top: calc(50vh - 87.5px - 175px);
-        fill: black;
     }
     .hex11 {
         position: absolute;
         left: calc(50% + 50px + 150px);
         top: calc(50vh - 87.5px);
-        fill: black;
     }
     .hex12 {
         position: absolute;
         left: calc(50% + 50px + 150px);
         top: calc(50vh - 87.5px + 175px);
-        fill: black;
     }
     .hex13 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh - 87.5px + 262.5px);
-        fill: black;
     }
     .hex14 {
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh - 87.5px + 350px);
-        fill: black;
     }
     .hex15 {
         position: absolute;
         left: calc(50% - 100px - 150px);
         top: calc(50vh + 87.5px + 87.5px);
-        fill: black;
     }
     .hex16 {
         position: absolute;
         left: calc(50% - 100px - 300px);
         top: calc(50vh + 87.5px);
-        fill: black;
     }
     .hex17 {
         position: absolute;
         left: calc(50% - 100px - 300px);
         top: calc(50vh - 87.5px);
-        fill: black;
     }
     .hex18 {
         position: absolute;
         left: calc(50% - 100px - 300px);
         top: calc(50vh - 87.5px - 175px);
-        fill: black;
     }
     .hex19 {
         position: absolute;
         left: calc(50% - 100px - 150px);
         top: calc(50vh - 87.5px - 262.5px);
-        fill: black;
     }
 /* Ring 4 */
     .hex20 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh - 87.5px - 437.5px);
-        fill: red;
     }
     .hex21 {
         position: absolute;
         left: calc(50% + 50px + 150px);
         top: calc(50vh - 87.5px - 350px);
-        fill: red;
     }
     .hex22 {
         position: absolute;
         left: calc(50% + 50px + 300px);
         top: calc(50vh - 87.5px - 262.5px);
-        fill: red;
     }
     .hex23 {
         position: absolute;
         left: calc(50% + 50px + 300px);
         top: calc(50vh - 87.5px - 87.5px);
-        fill: red;
     }
     .hex24 {
         position: absolute;
         left: calc(50% + 50px + 300px);
         top: calc(50vh);
-        fill: red;
     }
     .hex25 {
         position: absolute;
         left: calc(50% + 50px + 300px);
         top: calc(50vh + 175px);
-        fill: red;
     }
     .hex26 {
         position: absolute;
         left: calc(50% + 50px + 150px);
         top: calc(50vh + 262.5px);
-        fill: red;
     }
     .hex27 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh + 350px);
-        fill: red;
     }
     .hex28 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh + 350px);
-        fill: red;
     }
     .hex29 {
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh + 437.5px);
-        fill: red;
     }
     .hex30 {
         position: absolute;
         left: calc(50% - 250px);
         top: calc(50vh + 350px);
-        fill: red;
     }
     .hex31 {
         position: absolute;
         left: calc(50% - 400px);
         top: calc(50vh + 262.5px);
-        fill: red;
     }
     .hex32 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh + 175px);
-        fill: red;
     }
     .hex33 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh);
-        fill: red;
     }
     .hex34 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh - 175px);
-        fill: red;
     }
     .hex35 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh - 350px);
-        fill: red;
     }
     .hex36 {
         position: absolute;
         left: calc(50% - 400px);
         top: calc(50vh - 437.5px);
-        fill: red;
     }
     .hex37 {
         position: absolute;
         left: calc(50% - 100px - 150px);
         top: calc(50vh - 87.5px - 437.5px);
-        fill: red;
     }
     .hex38 {
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh - 87.5px - 525px);
-        fill: red;
     }
 
     /* Row 5 */
@@ -254,151 +246,126 @@
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh - 787.5px);
-        fill: black;
     }
     .hex40 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh - 700px);
-        fill: black;
     }
     .hex41 {
         position: absolute;
         left: calc(50% + 200px);
         top: calc(50vh - 612.5px);
-        fill: black;
     }
     .hex42 {
         position: absolute;
         left: calc(50% + 350px);
         top: calc(50vh - 525px);
-        fill: black;
     }
     .hex43 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh - 437.5px);
-        fill: black;
     }
     .hex44 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh - 262.5px);
-        fill: black;
     }
     .hex45 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh - 87.5px);
-        fill: black;
     }
     .hex46 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh + 87.5px);
-        fill: black;
     }
     .hex47 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh + 262.5px);
-        fill: black;
     }
     .hex48 {
         position: absolute;
         left: calc(50% + 350px);
         top: calc(50vh + 350px);
-        fill: black;
     }
     .hex49 {
         position: absolute;
         left: calc(50% + 200px);
         top: calc(50vh + 437.5px);
-        fill: black;
     }
     .hex50 {
         position: absolute;
         left: calc(50% + 50px);
         top: calc(50vh + 525px);
-        fill: black;
     }
     .hex51 {
         position: absolute;
         left: calc(50% - 100px);
         top: calc(50vh + 612.5px);
-        fill: black;
     }
     .hex52 {
         position: absolute;
         left: calc(50% - 250px);
         top: calc(50vh + 525px);
-        fill: black;
     }
     .hex53 {
         position: absolute;
         left: calc(50% - 400px);
         top: calc(50vh + 437.5px);
-        fill: black;
     }
     .hex54 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh + 350px);
-        fill: black;
     }
     .hex55 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh + 262.5px);
-        fill: black;
     }
     .hex56 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh + 87.5px);
-        fill: black;
     }
     .hex57 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh - 87.5px);
-        fill: black;
     }
     .hex58 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh - 262.5px);
-        fill: black;
     }
     .hex59 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh - 437.5px);
-        fill: black;
     }
     .hex60 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh - 525px);
-        fill: black;
     }
     .hex61 {
         position: absolute;
         left: calc(50% - 400px);
         top: calc(50vh - 612.5px);
-        fill: black;
     }
     .hex62 {
         position: absolute;
         left: calc(50% - 250px);
         top: calc(50vh - 700px);
-        fill: black;
     }
     .hex63 {
         position: absolute;
         left: calc(50% - 250px);
         top: calc(50vh - 700px);
-        fill: black;
     }
 
     /* Row 6 */
@@ -407,145 +374,121 @@
         position: absolute;
         left: calc(50% + 200px);
         top: calc(50vh - 787.5px);
-        fill: red;
     }
     .hex65 {
         position: absolute;
         left: calc(50% + 350px);
         top: calc(50vh - 700px);
-        fill: red;
     }
     .hex66 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh - 612.5px);
-        fill: red;
     }
     .hex67 {
         position: absolute;
         left: calc(50% + 650px);
         top: calc(50vh - 525px);
-        fill: red;
     }
     .hex68 {
         position: absolute;
         left: calc(50% + 650px);
         top: calc(50vh - 350px);
-        fill: red;
     }
     .hex69 {
         position: absolute;
         left: calc(50% + 650px);
         top: calc(50vh - 175px);
-        fill: red;
     }
     .hex70 {
         position: absolute;
         left: calc(50% + 650px);
         top: calc(50vh);
-        fill: red;
     }
     .hex71 {
         position: absolute;
         left: calc(50% + 650px);
         top: calc(50vh + 175px);
-        fill: red;
     }
     .hex72 {
         position: absolute;
         left: calc(50% + 650px);
         top: calc(50vh + 350px);
-        fill: red;
     }
     .hex73 {
         position: absolute;
         left: calc(50% + 500px);
         top: calc(50vh + 437.5px);
-        fill: red;
     }
     .hex74 {
         position: absolute;
         left: calc(50% + 350px);
         top: calc(50vh + 525px);
-        fill: red;
     }
     .hex75 {
         position: absolute;
         left: calc(50% + 200px);
         top: calc(50vh + 612.5px);
-        fill: red;
     }
     .hex76 {
         position: absolute;
         left: calc(50% - 400px);
         top: calc(50vh + 612.5px);
-        fill: red;
     }
     .hex77 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh + 525px);
-        fill: red;
     }
     .hex78 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh + 437.5px);
-        fill: red;
     }
     .hex79 {
         position: absolute;
         left: calc(50% - 850px);
         top: calc(50vh + 350px);
-        fill: red;
     }
     .hex80 {
         position: absolute;
         left: calc(50% - 850px);
         top: calc(50vh + 175px);
-        fill: red;
     }
     .hex81 {
         position: absolute;
         left: calc(50% - 850px);
         top: calc(50vh);
-        fill: red;
     }
     .hex82 {
         position: absolute;
         left: calc(50% - 850px);
         top: calc(50vh - 175px);
-        fill: red;
     }
     .hex83 {
         position: absolute;
         left: calc(50% - 850px);
         top: calc(50vh - 350px);
-        fill: red;
     }
     .hex84 {
         position: absolute;
         left: calc(50% - 850px);
         top: calc(50vh - 525px);
-        fill: red;
     }
     .hex85 {
         position: absolute;
         left: calc(50% - 700px);
         top: calc(50vh - 612.5px);
-        fill: red;
     }
     .hex86 {
         position: absolute;
         left: calc(50% - 550px);
         top: calc(50vh - 700px);
-        fill: red;
     }
     .hex87 {
         position: absolute;
         left: calc(50% - 400px);
         top: calc(50vh - 787.5px);
-        fill: red;
     }
 
 /* Row 7 */
@@ -554,43 +497,36 @@
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh - 612.5px);
-        fill: black;
     }
     .hex89 {
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh - 437.5px);
-        fill: black;
     }
     .hex90 {
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh - 262.5px);
-        fill: black;
     }
     .hex91 {
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh - 87.5px);
-        fill: black;
     }
     .hex92 {
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh + 87.5px);
-        fill: black;
     }
     .hex93 {
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh + 262.5px);
-        fill: black;
     }
     .hex94 {
         position: absolute;
         left: calc(50% + 800px);
         top: calc(50vh + 437.5px);
-        fill: black;
     }
 
     /* Row 7 */
@@ -599,43 +535,36 @@
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh + 437.5px);
-        fill: black;
     }
     .hex96 {
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh + 262.5px);
-        fill: black;
     }
     .hex97 {
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh + 87.5px);
-        fill: black;
     }
     .hex98 {
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh - 87.5px);
-        fill: black;
     }
     .hex99 {
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh - 262.5px);
-        fill: black;
     }
     .hex100 {
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh - 437.5px);
-        fill: black;
     }
     .hex101 {
         position: absolute;
         left: calc(50% - 1000px);
         top: calc(50vh - 612.5px);
-        fill: black;
     }
 
 /* Row 8 */
@@ -644,37 +573,31 @@
         position: absolute;
         left: calc(50% + 950px);
         top: calc(50vh - 525px);
-        fill: red;
     }
     .hex103 {
         position: absolute;
         left: calc(50% + 950px);
         top: calc(50vh - 350px);
-        fill: red;
     }
     .hex104 {
         position: absolute;
         left: calc(50% + 950px);
         top: calc(50vh - 175px);
-        fill: red;
     }
     .hex105 {
         position: absolute;
         left: calc(50% + 950px);
         top: calc(50vh );
-        fill: red;
     }
     .hex106 {
         position: absolute;
         left: calc(50% + 950px);
         top: calc(50vh + 175px);
-        fill: red;
     }
     .hex107 {
         position: absolute;
         left: calc(50% + 950px);
         top: calc(50vh + 350px);
-        fill: red;
     }
 
 /* Row 8 */
@@ -683,42 +606,36 @@
         position: absolute;
         left: calc(50% - 1150px);
         top: calc(50vh - 525px);
-        fill: red;
     }
 
     .hex109 {
         position: absolute;
         left: calc(50% - 1150px);
         top: calc(50vh - 350px);
-        fill: red;
     }
 
     .hex110 {
         position: absolute;
         left: calc(50% - 1150px);
         top: calc(50vh - 175px);
-        fill: red;
     }
 
     .hex111 {
         position: absolute;
         left: calc(50% - 1150px);
         top: calc(50vh);
-        fill: red;
     }
 
     .hex112 {
         position: absolute;
         left: calc(50% - 1150px);
         top: calc(50vh + 175px);
-        fill: red;
     }
 
     .hex113 {
         position: absolute;
         left: calc(50% - 1150px);
         top: calc(50vh + 350px);
-        fill: red;
     }
 
 
@@ -796,7 +713,6 @@
     }
 
     .grid-item svg {
-        fill: red;
         stroke: red;
         stroke-width: 0;
     }
