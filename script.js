@@ -1,6 +1,14 @@
 $(document).ready(function(){
     console.log("Document loaded successfully");
 
+
+    
+
+
+
+
+
+
     var num_rows = $(window).width() / 175;
     
     var num_hex = $(window).height() / 200;
@@ -15,7 +23,7 @@ $(document).ready(function(){
         } else {
             $(".container").append(`<div class="grid-cont grid-container${i}" style="margin-left: 71px"></div>`);
         }   
-        for(var j = 0; j < num_hex + 2; j++){
+        for(var j = 0; j < num_hex + 3; j++){
             $(`.grid-container${i}`).append(`
                 <div class="grid-item">
                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200'>
@@ -36,7 +44,7 @@ $(document).ready(function(){
         } else {
             $(".container2").append(`<div class="grid-cont grid-container2${i}" style="margin-left: 71px"></div>`);
         }   
-        for(var j = 0; j < num_hex + 2; j++){
+        for(var j = 0; j < num_hex + 3; j++){
             $(`.grid-container2${i}`).append(`
                 <div class="grid-item">
                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200'>
