@@ -2,27 +2,136 @@ $(document).ready(function(){
     console.log("Document loaded successfully");
 
 
-    function wave(){
-        var random_color_1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_3 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_4 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_5 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_6 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_7 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-        // var random_color_8 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    // Start off with nothing shown
+    $(".hexagon").css({"opacity" : "0"});
 
-        $(".row1").css({"fill" : random_color_1});
-        $(".row2").css({"fill" : random_color_1});
-        $(".row3").css({"fill" : random_color_1});
-        $(".row4").css({"fill" : random_color_1});
-        $(".row5").css({"fill" : random_color_1});
-        $(".row6").css({"fill" : random_color_1});
-        $(".row7").css({"fill" : random_color_1});
-        $(".row8").css({"fill" : random_color_1});
+    // staggeredDissapear();
+    staggeredReappear();
+    // randomlyDissapear();
+
+    // wave();
+
+    function randomlyDissapear(){
+        var rand_number = Math.ceil(Math.random()* 115);
+        var rand_num = Math.random();
+        $(`.hex${rand_number}`).delay(5000).animate({"opacity" : rand_num});
+
+        console.log("hex " + rand_number);
     }
 
-    wave();
+    function finished(){
+        randomlyDissapear();
+    }
+
+    function staggeredDissapear(){
+        $(`.row1`).animate({"opacity" : "0"}, function(){
+            $(`.row2`).animate({"opacity" : "0"}, function(){
+                $(`.row3`).animate({"opacity" : "0"}, function(){
+                    $(`.row4`).animate({"opacity" : "0"}, function(){
+                        $(`.row5`).animate({"opacity" : "0"}, function(){
+                            $(`.row6`).animate({"opacity" : "0"}, function(){
+                                $(`.row7`).animate({"opacity" : "0"}, function(){
+                                    $(`.row8`).animate({"opacity" : "0"}, function(){
+                                        finished();
+                                    });
+                                });
+                            });
+                        });
+                    }); 
+                });
+            });
+        });
+    }
+
+    function staggeredReappear(){
+        $(`.row1`).animate({"opacity" : "0.1"}, function(){
+            $(`.row2`).animate({"opacity" : "0.2"}, function(){
+                $(`.row3`).animate({"opacity" : "0.3"}, function(){
+                    $(`.row4`).animate({"opacity" : "0.4"}, function(){
+                        $(`.row5`).animate({"opacity" : "0.6"}, function(){
+                            $(`.row6`).animate({"opacity" : "0.7"}, function(){
+                                $(`.row7`).animate({"opacity" : "0.8"}, function(){
+                                    $(`.row8`).animate({"opacity" : "0.9"}, function(){
+                                    });
+                                });
+                            });
+                        });
+                    }); 
+                });
+            });
+        });
+    }
+
+    // evenOdd();
+
+    // function evenOdd(){
+    //     for(var i = 1; i < 115; i++){
+    //         if(i % 2 == 0){
+    //             $(`.hex${i}`).css({"stroke" : "white", "fill" : "rgb(255, 255, 100, 0.25)"});
+    //         } else {
+    //             $(`.hex${i}`).css({"stroke" : "black", "fill" : "black"});
+    //         }
+    //     }
+    // }
+
+    // fadeIn();
+
+    // function fadeIn(){
+    //     for(var i = 1; i < 9; i++){
+    //         $(`.row${i}`).hide();
+    //     }
+    //     // $(`.row1`).hide().fadeIn(300, function(){
+    //     //     $(`.row2`).hide().fadeIn(300, function(){
+    //     //         $(`.row3`).hide().fadeIn(300, function(){
+    //     //             $(`.row4`).hide().fadeIn(300, function(){
+    //     //                 $(`.row5`).hide().fadeIn(300, function(){
+    //     //                     $(`.row6`).hide().fadeIn(300, function(){
+    //     //                         $(`.row7`).hide().fadeIn(300, function(){
+    //     //                             $(`.row8`).hide().fadeIn(300, function(){
+    //     //                                 $(`.row9`).hide().fadeIn(300, function(){
+    //     //                                 })
+    //     //                             })
+    //     //                         })
+    //     //                     })
+    //     //                 })
+    //     //             })
+    //     //         })
+    //     //     })
+    //     // })
+    // }
+
+
+    // $(".hex1").hover(function(){
+    //     $(".hexagon").css({"fill" : "red"});
+    // })
+    // $(".hex2").hover(function(){
+    //     $(".hexagon").css({"fill" : "blue"});
+    // })
+    // $(".hex3").hover(function(){
+    //     $(".hexagon").css({"fill" : "green"});
+    // })
+
+    function wave(){
+        var random_color_1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_3 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_4 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_5 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_6 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_7 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_8 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+
+        $(".row1").css({"fill" : random_color_1});
+        $(".row2").css({"fill" : random_color_2});
+        $(".row3").css({"fill" : random_color_3});
+        $(".row4").css({"fill" : random_color_4});
+        $(".row5").css({"fill" : random_color_5});
+        $(".row6").css({"fill" : random_color_6});
+        $(".row7").css({"fill" : random_color_7});
+        $(".row8").css({"fill" : random_color_8});
+
+        // $(".row1").delay(2000).fadeOut().css({"fill" : random_color_2}).fadeIn();
+    }
 
 
     function rainbowTrigger(){
@@ -95,6 +204,31 @@ $(document).ready(function(){
             loadContent();
         }  
       }
+
+
+
+    //   Hide/Show Media Links
+      $(".linkedin-slider, .github-slider, .youtube-slider, .facebook-slider").hide();
+      $(".trigger").hover(function(){
+        $(this).stop().animate({"padding-left": "8px"}).css({"border-left":"2px solid rgb(6,170,226)"});
+        if($(this).attr('name') == 'linkedin'){
+          $(".linkedin-slider").stop().fadeIn();
+        } else if($(this).attr('name') == 'github'){
+          $(".github-slider").stop().fadeIn();
+        } else if($(this).attr('name') == 'youtube'){
+          $(".youtube-slider").stop().fadeIn();
+        } else if($(this).attr('name') == 'facebook'){
+          $(".facebook-slider").stop().fadeIn();
+        }
+      }, function(){
+        $(this).stop().animate({"padding-left": "0px"}).css({"border-left":"0px solid rgb(6,170,226)"});  
+        $(".linkedin-slider, .github-slider, .youtube-slider, .facebook-slider").fadeOut();
+      })
+     
+
+
+
+
 
 
 

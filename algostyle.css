@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: red;
+}
+
+.block {
+    background-color: white;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    font-size: 0;
+}
+
+.button {
+    width: 20px;
+    height: 20px;
+}
+
+.color_button {
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
