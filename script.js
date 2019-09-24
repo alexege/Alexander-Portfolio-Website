@@ -1,15 +1,68 @@
 $(document).ready(function(){
     console.log("Document loaded successfully");
-
-
-    // Start off with nothing shown
-    $(".hexagon").css({"opacity" : "0"});
-
+    // hideAllHexagons();
     // staggeredDissapear();
-    staggeredReappear();
+    // staggeredReappear();
     // randomlyDissapear();
+    // staggeredReappear();
+    // hideOdd();
+    // hideEven();
+    // hide();
+    // colorwave();
 
-    // wave();
+    moveHexToFront();
+
+    $(".hex1").click(function(){
+        staggeredDissapear();
+        // hideVisibleHex();
+        // randomlyDissapear();
+    });
+
+    $("#ajax_resume_page").click(function(){
+        hideVisibleHex();
+    });
+
+    // $(".hexagon").hover(function(){
+    //     var rand_num = Math.random();
+    //     $(this).css({"opacity" : "0"}).stop().animate({"opacity" : rand_num}, 2000);
+    // })
+
+    function hideVisibleHex(){
+        for(var i = 0; i < 39; i++){
+            var rand = Math.random()*4000;
+            $(`.hex${i}`).fadeOut(rand);
+        }
+    }
+
+    function moveHexToFront(){
+        $("#screen").css({"opacity" : "1"})
+        $(".hexagon").animate({"opacity": "1", "z-index" : "999999"});
+    }
+    
+    function moveHexToBack(){
+        $(".hexagon").animate({"opacity": "1", "z-index" : "-1"});
+        $("#screen").css({"opacity" : "0", "z-index" : -2})
+    }
+    
+    function hideOdd(){
+        for(var i = 0; i < 115; i++){
+            if(i % 2 == 0){
+                $(`.hex${i}`).animate({"opacity" : "0"});
+            }
+        }
+    }
+    
+    function hideEven(){
+        for(var i = 0; i < 115; i++){
+            if(i % 2 != 0){
+                $(`.hex${i}`).animate({"opacity" : "0"});
+            }
+        }
+    }
+
+    function hideAllHexagons(){
+        $(".hexagon").css({"opacity" : "0"});
+    }
 
     function randomlyDissapear(){
         var rand_number = Math.ceil(Math.random()* 115);
@@ -20,26 +73,29 @@ $(document).ready(function(){
     }
 
     function finished(){
-        randomlyDissapear();
+        // staggeredReappear();
+        // randomlyDissapear();
+        // hide();
+    }
+
+    function hide(){
+        for(var i = 1; i < 115; i++){
+            $(`.hex${i}`).animate({"opacity" : "0"}, 200 * i);
+            $(`.hex${i}`).delay(800).animate({"opacity" : "1"}, 200 * i);
+            console.log(`.hex${i}`);
+        }
     }
 
     function staggeredDissapear(){
-        $(`.row1`).animate({"opacity" : "0"}, function(){
-            $(`.row2`).animate({"opacity" : "0"}, function(){
-                $(`.row3`).animate({"opacity" : "0"}, function(){
-                    $(`.row4`).animate({"opacity" : "0"}, function(){
-                        $(`.row5`).animate({"opacity" : "0"}, function(){
-                            $(`.row6`).animate({"opacity" : "0"}, function(){
-                                $(`.row7`).animate({"opacity" : "0"}, function(){
-                                    $(`.row8`).animate({"opacity" : "0"}, function(){
-                                        finished();
-                                    });
-                                });
-                            });
-                        });
-                    }); 
-                });
-            });
+        $(".row1").animate({"opacity" : "0"});
+        $(".row2").delay(200).animate({"opacity" : "0"});
+        $(".row3").delay(400).animate({"opacity" : "0"});
+        $(".row4").delay(600).animate({"opacity" : "0"});
+        $(".row5").delay(800).animate({"opacity" : "0"});
+        $(".row6").delay(1000).animate({"opacity" : "0"});
+        $(".row7").delay(1200).animate({"opacity" : "0"});
+        $(".row8").delay(1400).animate({"opacity" : "0"}, function(){
+            moveHexToBack();
         });
     }
 
@@ -52,6 +108,7 @@ $(document).ready(function(){
                             $(`.row6`).animate({"opacity" : "0.7"}, function(){
                                 $(`.row7`).animate({"opacity" : "0.8"}, function(){
                                     $(`.row8`).animate({"opacity" : "0.9"}, function(){
+                                        //finished();
                                     });
                                 });
                             });
@@ -111,7 +168,7 @@ $(document).ready(function(){
     //     $(".hexagon").css({"fill" : "green"});
     // })
 
-    function wave(){
+    function colorwave(){
         var random_color_1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
         var random_color_2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
         var random_color_3 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);

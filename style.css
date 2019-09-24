@@ -1,4 +1,4 @@
-
+/* ---------------------------Misc--------------------------- */
     *{
         margin: 0;
         padding: 0;
@@ -14,55 +14,7 @@
         text-align: center;
     }
 
-
-
-
-    .box1 {
-        /* border: 1px solid red; */
-        display: inline-block;
-        margin-left: -52px;
-    }
-
-    .box2 {
-        vertical-align: top;
-        /* border: 1px solid lime; */
-        display: inline-block;
-        margin-left: -57px;
-        margin-top: -100px;
-        margin-right: -2px;
-    }
-
-    .grid-cont {
-        display: inline-block;
-    }
-
-    .grid-container {
-        position: absolute;
-        display: grid;
-        margin-top: -13px;
-        display: inline-block;
-    }
-
-    /* .grid-container2 {
-        position: absolute;
-        left: 150px;
-        display: grid;
-        margin-top: 75px;
-    }
-
-    .grid-container3 {
-        position: absolute;
-        left: 300px;
-        display: grid;
-        margin-top: -13px;
-    }
-
-    .grid-container4 {
-        position: absolute;
-        left: 450px;
-        display: grid;
-        margin-top: 75px;
-    } */
+/* ---------------------------Misc--------------------------- */
 
     .grid-container-odd {
         display: grid;
@@ -78,10 +30,6 @@
         stroke: red;
         stroke-width: 0;
     }
-
-    /* .grid-container2 .grid-item svg, .grid-container4 .grid-item svg {
-        fill: cyan;
-    } */
 
     .grid-item svg:hover {
         fill: white;
@@ -129,9 +77,6 @@
     .navbar {
         text-align: center;
         width: 100%;
-        /* position: absolute; */
-        /* top: 180px;
-        left: 45%; */
     }
 
     .navbar a {
@@ -143,8 +88,8 @@
 
     .media-links {
         position: absolute;
-        top: 45%;
-        left: 0;
+        top: calc(50% - 95px);
+        left: 20px;
         z-index: 210;
     }
     
@@ -177,11 +122,10 @@
     }
     
     .media-links li:before {
-        content: "▹";
+        /* content: "▹"; */
         /* content: "\25B9"; */
         position: absolute;
         left: -18px;
-        color: red;
         line-height: 25px;
     }
 
@@ -237,8 +181,19 @@
         text-shadow: -4px 0 #f14492;
         animation: effect 3s infinite linear;
     }
-
     @-webkit-keyframes effect {
+        0% {
+            transform: translate3d(-5px, 0, 0);
+        }
+        50% {
+            transform: translate3d(5px, 0, 0);
+        }
+        100% {
+            transform: translate3d(-5px, 0, 0);
+        }
+    }
+
+    /* @-webkit-keyframes effect {
         0% {
             clip: rect(55px, 9999px, 56px, 0);
         }
@@ -302,13 +257,21 @@
         100% {
             clip: rect(17px, 9999px, 79px, 0);
         }
-    }
+    } */
 
 #main_content {
-    border: 1px solid white; 
+    /* border: 1px solid white;  */
     min-height: 80vh;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+#screen {
+    background-color: black;
+    width: 1000vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
 }
 
 .container {
@@ -334,8 +297,28 @@
     overflow: hidden;
     max-width: 600px;
 }
+/* ---------------------------Resume--------------------------- */
+.resume {
+    color: white;
+    font-size: 14px;
+    /* background-color: rgb(100, 255, 218, 0.25); */
+    background-color: rgb(6,170,226, 0.5);
+}
 
-/* Projects */
+.resume h3 {
+    color: rgb(100, 255, 218);
+    font-size: 24px;
+    border-bottom: 2px solid white;
+}
+
+.resume h5 {
+    color: rgb(6,174,226, 0.75);
+    font-size: 16px;
+    border-bottom: 2px solid white;
+}
+
+
+/* ---------------------------Projects--------------------------- */
 .project-container {
     /* text-align: center; */
     /* width: 1000px; */
@@ -391,16 +374,12 @@
 }
 
 
-
-
-
-
     /* Hex things */
 
     .hexagon {
         /* opacity: 0; */
         /* fill: rgb(100, 255, 218); */
-        fill: rgb(6,174,226);
+        fill: rgb(6,174,226, 0.85);
         stroke:black;
         stroke-width: 2;
         /* stroke-dasharray: 1000;
@@ -414,7 +393,7 @@
         }
       } */
 
-    .hexagon:hover {
+    /* .hexagon:hover {
         animation-name: fade;
         animation-duration: 5s;
     }
@@ -429,7 +408,52 @@
     }
     svg:hover {
         fill: white;
-    }
+    } */
+
+.project_hexagon:hover {
+    fill: url("css/images/WebFunds.png");
+}
+
+.project_hexagon {
+    fill: black;
+    stroke: #06aae2;
+    stroke-width: 2;
+}
+
+.project_hex0 {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    z-index: 100;
+    top: calc(50% - 15px);
+    left: calc(50% - 75px);
+}
+.project_hex1 {
+    position: absolute;
+    z-index: 100;
+    left: calc(50% - 100px);
+    top: calc(50vh - 87.5px - 175px);
+}
+.project_hex2 {
+    position: absolute;
+    z-index: 100;
+    left: calc(50% - 100px + 150px);
+    top: calc(50vh);
+}
+.project_hex3 {
+    position: absolute;
+    z-index: 100;
+    left: calc(50% - 100px - 150px);
+    top: calc(50vh);
+}
+.project_hex4 {
+    position: absolute;
+    z-index: 100;
+    left: calc(50% - 100px);
+    top: calc(50vh - 89.5px);
+}
+
+
 
 /* Ring 1 */
     .hex1 {
