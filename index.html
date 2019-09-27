@@ -17,21 +17,20 @@
 </head>
 <body style="position: relative;">
 
+    <div style="width: 350px; height: 30px; background-color: black; border-right: 4px solid white; border-bottom: 2px solid white; transform: skew(-50deg); position: absolute; z-index: 20; right: calc(50% - 300px);"></div>
+    <div style="width: 350px; height: 30px; background-color: black; border-left: 4px solid white; border-bottom: 2px solid white; transform: skew(50deg); position: absolute; z-index: 20; left: calc(50% - 300px);"></div>
+
     <div id="screen"></div>
 
     <!-- <div class="container"></div>
     <div class="container2"></div> -->
 
-    <div>
-        <h2 class="glitch">Alexander Ege</h2>
-    </div>
-
-    <div class="navbar">
-        <a id="ajax_about_page">About</a> |
-        <a id="ajax_projects_page">Projects</a> |
-        <a id="ajax_education_page">Education</a> | 
-        <a id="ajax_workhistory_page">Work History</a> |
-        <a id="ajax_resume_page">Resume</a>
+    <div class="navbar" id="navbar">
+        <a class="nav-item active" id="ajax_about_page">About</a>
+        <a class="nav-item" id="ajax_projects_page">Projects</a>
+        <a class="nav-item" id="ajax_education_page">Education</a> 
+        <a class="nav-item" id="ajax_workhistory_page">Work History</a>
+        <a class="nav-item" id="ajax_resume_page">Resume</a>
     </div>
 
     <div class="media-links">
@@ -44,6 +43,11 @@
     </div>
 
     <div id="main_content"></div>
+
+    <!-- <svg class="hexagon hex1 row1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="175" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <text x="50" y="50">ENTER</text>
+        <polygon class="hex" points="50,0 0,87.5 50,175 150,175 200,87.5 150,00"></polygon>
+    </svg> -->
 
 
     <!-- Row 1 -->
@@ -514,13 +518,13 @@
         <polygon class="hex" points="50,0 0,87.5 50,175 150,175 200,87.5 150,00"></polygon>
     </svg>
 
+    </div> <!-- End of container -->
+
     <div class="corner-bottom-left"></div>
     <div class="corner-bottom-right"></div>
     <div class="corner-top-left"></div>
     <div class="corner-top-right"></div>
 
-    </div> <!-- End of container -->
-    
 <script src="script.js"></script>
 </body>
 </html>

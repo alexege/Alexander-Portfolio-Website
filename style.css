@@ -1,3 +1,11 @@
+#headtab svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    /* set height to pixels if you want angle to change with screen width */
+  }
+
 /* ---------------------------Misc--------------------------- */
     *{
         margin: 0;
@@ -8,10 +16,26 @@
         background-color: transparent;
         overflow: hidden;
         background-color: black;
+        font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;;
     }
 
     header {
         text-align: center;
+    }
+
+    ul li {
+        margin-left: 40px;
+    }
+
+    /* Hello Vintage Font */
+    @font-face {
+        font-family: vintage;
+        src: url(/css/fonts/vintage.TTF);
+    }
+
+    /* Hide Scrollbar */
+    ::-webkit-scrollbar {
+        width: 0px;  /* Remove scrollbar space */
     }
 
 /* ---------------------------Misc--------------------------- */
@@ -42,7 +66,7 @@
         height: 100px;
         position: absolute;
         left: 25px;
-        bottom: 25px;
+        bottom: 63px;
         border-left: 2px solid white;
         border-bottom: 2px solid white;
     }
@@ -51,7 +75,7 @@
         height: 100px;
         position: absolute;
         right: 25px;
-        bottom: 25px;
+        bottom: 63px;
         border-right: 2px solid white;
         border-bottom: 2px solid white;
     }
@@ -74,14 +98,27 @@
         border-top: 2px solid white;
     }
 
+/* ---------------------------Navbar--------------------------- */
+
     .navbar {
+        /* margin: 10px; */
+        /* padding: 10px; */
         text-align: center;
         width: 100%;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        z-index: 21;
     }
 
     .navbar a {
-        color: white;
+        /* color: grey; */
         text-decoration: none;
+    }
+
+    .active {
+        color: rgb(100, 255, 218);
+        /* border-bottom: 2px solid #06aae2; */
     }
 
     /* Navlinks */
@@ -181,7 +218,7 @@
         text-shadow: -4px 0 #f14492;
         animation: effect 3s infinite linear;
     }
-    @-webkit-keyframes effect {
+    /* @-webkit-keyframes effect {
         0% {
             transform: translate3d(-5px, 0, 0);
         }
@@ -191,9 +228,9 @@
         100% {
             transform: translate3d(-5px, 0, 0);
         }
-    }
+    } */
 
-    /* @-webkit-keyframes effect {
+    @-webkit-keyframes effect {
         0% {
             clip: rect(55px, 9999px, 56px, 0);
         }
@@ -257,13 +294,14 @@
         100% {
             clip: rect(17px, 9999px, 79px, 0);
         }
-    } */
+    }
 
 #main_content {
     /* border: 1px solid white;  */
-    min-height: 80vh;
+    min-height: 100vh;
     max-width: 1000px;
     margin: 0 auto;
+    padding-top: 30px;
 }
 
 #screen {
@@ -279,8 +317,9 @@
     color: white;
 }
 
-/* About Me */
+/* ---------------------------About Me--------------------------- */
 .aboutme-container {
+    /* background-color: rgb(0, 0, 0, 0.25); */
     width: 1000px;
     text-align: center;
     margin: 0 auto;
@@ -296,33 +335,100 @@
     margin: 0 auto;
     overflow: hidden;
     max-width: 600px;
+    padding: 15px;
+}
+
+.skill-item {
+    display: inline-block;
+    padding: 10px;
+    color: rgb(100, 255, 218);
+    border-radius: 5px;
+    border: 1px solid rgb(6,174,226);
+    /* background-color: rgb(255, 255, 255, 0.20); */
+    font-weight: bold;
+}
+
+.skill-item:hover {
+    background-color: rgb(6,174,226);
+    color: white;
+    font-weight: bold;
 }
 /* ---------------------------Resume--------------------------- */
 .resume {
+    max-height: 90vh;
     color: white;
-    font-size: 14px;
+    /* color: #61dafb; */
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: scroll;
     /* background-color: rgb(100, 255, 218, 0.25); */
-    background-color: rgb(6,170,226, 0.5);
+    /* background-color: rgb(6,170,226, 0.5); */
+}
+
+.resume h1 {
+    /* color: rgb(100, 255, 218); */
+    color: rgb(6,174,226);
+    font-family: vintage;
+    font-size: 66px;
+    font-weight: 100;
 }
 
 .resume h3 {
     color: rgb(100, 255, 218);
-    font-size: 24px;
+    font-size: 20px;
     border-bottom: 2px solid white;
+    margin: 5px 0;
 }
 
 .resume h5 {
-    color: rgb(6,174,226, 0.75);
+    color: #06aae2;
     font-size: 16px;
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
 }
+
+.resume ul {
+    margin: 10px 0;
+}
+
+.resume ul li {
+    color: white; 
+    /* set color of list item text */
+    /* display: inline-block; */
+    list-style: none; 
+    /* margin: 0 0 2px 1.1225em; */
+    /* Give the bullet room on the left hand side */
+    padding: 0;
+    position: relative;
+  }
+
+.resume ul li::before {
+    color: rgb(100, 255, 218);  
+    /* color of bullet or square */
+    content: "\25C6"; 
+    /* Unicode of character to precede the list item */
+    /* display: inline-block; */
+    font-size: .65em; 
+    /* use em or % */ 
+    left: -1.1225em; 
+    /* use em, line up bullet flush with left hand side */
+    position: absolute;
+    /* Set the bullet positioned absolutely top left */
+    top: 0em; 
+    /* use em or % */
+  }
+
+.right {
+    float: right;
+    color: rgb(100, 255, 218);
+}
+
 
 
 /* ---------------------------Projects--------------------------- */
 .project-container {
     /* text-align: center; */
     /* width: 1000px; */
-    margin: 10px;
+    /* margin: 10px; */
     /* margin: 0 auto; */
     display: grid;
     grid-template-columns: auto auto auto;
@@ -348,11 +454,14 @@
     font-weight: bold;
 }
 
+.project-container img {
+    max-height: 500px;
+}
 
 .project-box {
     background-color: rgb(6,174,226, 0.75);
     /* border: 2px solid rgb(100, 255, 218); */
-    height: 300px;
+    min-height: 300px;
     /* display: inline-block; */
 }
 
@@ -380,11 +489,12 @@
         /* opacity: 0; */
         /* fill: rgb(100, 255, 218); */
         fill: rgb(6,174,226, 0.85);
-        stroke:black;
-        stroke-width: 2;
-        /* stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: dash 5s linear forwards; */
+        /* fill: black; */
+        stroke:white;
+        /* stroke-width: 5;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000; */
+        /* animation: dash 5s linear forwards; */
     }
       
       /* @keyframes dash {
@@ -430,21 +540,21 @@
 }
 .project_hex1 {
     position: absolute;
-    z-index: 100;
+    z-index: 999999;
     left: calc(50% - 100px);
-    top: calc(50vh - 87.5px - 175px);
+    top: calc(50vh - 87.5px - 177px);
 }
 .project_hex2 {
     position: absolute;
     z-index: 100;
     left: calc(50% - 100px + 150px);
-    top: calc(50vh);
+    top: calc(50vh - 2px);
 }
 .project_hex3 {
     position: absolute;
     z-index: 100;
     left: calc(50% - 100px - 150px);
-    top: calc(50vh);
+    top: calc(50vh - 2px);
 }
 .project_hex4 {
     position: absolute;

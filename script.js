@@ -1,3 +1,22 @@
+$(".project_hex1").click(function(){
+    console.log("Triggered");
+})
+
+var toggle;
+function ToggleMenu(){
+    if(toggle){
+        $(".project_hex1").animate({"top" : "-=75px"}, 2000)
+        $(".project_hex2").animate({"left" : "+=75px", "top" : "+=75px"}, 2000)
+        $(".project_hex3").animate({"left" : "-=75px", "top" : "+=75px"}, 2000)
+        toggle = false;
+    } else {
+        $(".project_hex1").animate({"top" : "+=75px"}, 2000)
+        $(".project_hex2").animate({"left" : "-=75px", "top" : "-=75px"}, 2000)
+        $(".project_hex3").animate({"left" : "+=75px", "top" : "-=75px"}, 2000)
+        toggle = true;
+    }
+}
+
 $(document).ready(function(){
     console.log("Document loaded successfully");
     // hideAllHexagons();
@@ -7,20 +26,164 @@ $(document).ready(function(){
     // staggeredReappear();
     // hideOdd();
     // hideEven();
-    // hide();
+    // spiralHideShow();
     // colorwave();
-
+    // randomFade();
+    // randFill();
+    // singleRandFill();
+    // setInterval(randomFade, 10000);
+    // setInterval(randFade, 100);
     moveHexToFront();
+    console.log("Moving hex to front");
 
     $(".hex1").click(function(){
         staggeredDissapear();
         // hideVisibleHex();
         // randomlyDissapear();
+        moveHexToBack();
     });
+
+    $(".project_hex1").click(function(){
+        console.log("Content");
+    })
+
+    // var mouseIsDown = false;
+    // $(document).mousedown(function(){
+    //     console.log("MOuse is down");
+    //     mouseIsDown = true;
+    // }).mouseup(function(){
+    //     console.log("MOuse is uP");
+    //     mouseIsDown = false;
+    // })
+
+    function randFade(){
+        var rand_hex = Math.ceil(Math.random()*114);
+        var rand_time = Math.random()*10000;
+        console.log("hex " + rand_hex);
+        $(`.hex${rand_hex}`).animate({"opacity" : "0"}, rand_time).delay(rand_time).animate({"opacity" : "1"}, rand_time);
+    }
+
+    function randomFade(){
+        console.log("RandomFade()");
+        for(var i = 1; i < 114; i++){
+            var rand_1 = Math.random()*10000;
+            var rand_2 = Math.random()*10000;
+            $(`.hex${i}`).delay(rand_2).animate({"opacity" : "0"}, rand_1).delay(rand_2).css({"opacity" : rand_1});
+        }
+    }
+    
+    function singleRandFill(){
+        var rand = "#0000ff";
+        $(document).mousedown(function(){
+            var colorR = Math.floor((Math.random() * 256));
+            var colorG = Math.floor((Math.random() * 256));
+            var colorB = Math.floor((Math.random() * 256));
+            rand = `rgb(${colorR}, ${colorG}, ${colorB})`;
+            // var back = ["#ff0000","#00ff00","#0000ff"];
+            // rand = back[Math.floor(Math.random() * back.length)];
+        return rand;
+    })
+
+    $(".hexagon").hover(function(){
+        if(mouseIsDown){
+
+            if($(this).attr("isStroked") == "true"){
+                console.log("Is true");
+                $(this).css({"fill" : rand})
+            }
+
+            console.log($(this).attr("stroke-dashoffset"))
+            $(this).animate({"stroke-dashoffset" : "0"});
+            $(this).attr("isStroked", "true");
+        }
+    });
+    }
+
+
+
+    // Randomly fill each hex with a color
+    function randFill(){
+    $(".hexagon").hover(function(){
+        if(mouseIsDown){
+            var rand_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+
+            if($(this).attr("isStroked") == "true"){
+                console.log("Is true");
+                $(this).css({"fill" : rand_color})
+            }
+
+            console.log($(this).attr("stroke-dashoffset"))
+            $(this).animate({"stroke-dashoffset" : "0"});
+            $(this).attr("isStroked", "true");
+        }
+    });
+    }
+
+    $('body').on('click','.project_hex1',function(){
+        
+    })
+
+    var toggle = true;
+    $("body").on('click', 'img', function(){
+        $(this).css("stroke", "2px solid yellow");
+        if(toggle){
+            $(".project_hex1").stop().animate({"top" : "-=75px"}, 2000)
+            $(".project_hex2").stop().animate({"left" : "+=75px", "top" : "+=75px"}, 2000)
+            $(".project_hex3").stop().animate({"left" : "-=75px", "top" : "+=75px"}, 2000)
+            toggle = false;
+        } else {
+            $(".project_hex1").stop().animate({"top" : "+=75px"}, 2000)
+            $(".project_hex2").stop().animate({"left" : "-=75px", "top" : "-=75px"}, 2000)
+            $(".project_hex3").stop().animate({"left" : "+=75px", "top" : "-=75px"}, 2000)
+            toggle = true;
+        }
+    });
+
+    // .project_hex1 {
+    //     position: absolute;
+    //     z-index: 999999;
+    //     left: calc(50% - 100px);
+    //     top: calc(50vh - 87.5px - 177px);
+    // }
+    // .project_hex2 {
+    //     position: absolute;
+    //     z-index: 100;
+    //     left: calc(50% - 100px + 150px);
+    //     top: calc(50vh - 2px);
+    // }
+    // .project_hex3 {
+    //     position: absolute;
+    //     z-index: 100;
+    //     left: calc(50% - 100px - 150px);
+    //     top: calc(50vh - 2px);
+    // }
+    // .project_hex4 {
+    //     position: absolute;
+    //     z-index: 100;
+    //     left: calc(50% - 100px);
+    //     top: calc(50vh - 89.5px);
+    // }
+
+
 
     $("#ajax_resume_page").click(function(){
         hideVisibleHex();
     });
+    $("#ajax_projects_page").click(function(){
+        // hideVisibleHex();
+        spiralHide();
+    });
+
+    // Check active navitem
+    var header = document.getElementById("navbar");
+    var btns = header.getElementsByClassName("nav-item");
+    for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+    });
+    }
 
     // $(".hexagon").hover(function(){
     //     var rand_num = Math.random();
@@ -28,7 +191,7 @@ $(document).ready(function(){
     // })
 
     function hideVisibleHex(){
-        for(var i = 0; i < 39; i++){
+        for(var i = 0; i < 63; i++){
             var rand = Math.random()*4000;
             $(`.hex${i}`).fadeOut(rand);
         }
@@ -68,8 +231,6 @@ $(document).ready(function(){
         var rand_number = Math.ceil(Math.random()* 115);
         var rand_num = Math.random();
         $(`.hex${rand_number}`).delay(5000).animate({"opacity" : rand_num});
-
-        console.log("hex " + rand_number);
     }
 
     function finished(){
@@ -78,11 +239,17 @@ $(document).ready(function(){
         // hide();
     }
 
-    function hide(){
+    function spiralHideShow(){
         for(var i = 1; i < 115; i++){
             $(`.hex${i}`).animate({"opacity" : "0"}, 200 * i);
-            $(`.hex${i}`).delay(800).animate({"opacity" : "1"}, 200 * i);
+            $(`.hex${i}`).delay(1200).animate({"opacity" : "1"}, 200 * i);
             console.log(`.hex${i}`);
+        }
+    }
+
+    function spiralHide(){
+        for(var i = 1; i < 115; i++){
+            $(`.hex${i}`).animate({"opacity" : "0"}, 200 * i);
         }
     }
 
