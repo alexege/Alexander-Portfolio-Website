@@ -1,20 +1,145 @@
-<div class="hex hex-box-2" name="Webfunds">
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200' stroke="rgb(6,170,226)">
-    <defs>
-        <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
-            <image xlink:href="css/images/Python.png" x="0" y="0" width="64" height="64" />
-        </pattern>
-    </defs>
-    <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="url(#img2)"/>
-    </svg>
-</div>
+<body>
 
-<svg class="hexagon hex1 row1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="175" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <polygon class="hex" points="50,0 0,87.5 50,175 150,175 200,87.5 150,00" fill="url(#img2)"></polygon>
-    <defs>
-        <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
-            <image xlink:href="css/images/Python.png" x="0" y="0" width="64" height="64" />
-        </pattern>
-    </defs>
-    <!-- <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="url(#img2)"/> -->
-</svg>
+    <div class="education-content"></div>
+
+    <div class="education-container">
+        <div class="edu_hex edu_hex1" name="Python">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200' stroke="rgb(6,170,226)">
+            <defs>
+                <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image xlink:href="css/images/Python.png" x="0" y="0" width="64" height="64" />
+                </pattern>
+            </defs>
+            <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="url(#img1)" id="target"/>
+            </svg>
+        </div>
+        
+        <div class="edu_hex edu_hex2" name="Mean" id="education_hexagon">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200' stroke="rgb(6,170,226)">
+            <defs>
+                <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image xlink:href="css/images/Mean.png" x="0" y="0" width="64" height="64" />
+                </pattern>
+            </defs>
+            <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="url(#img2)"/>
+            </svg>
+        </div>
+        
+        <div class="edu_hex edu_hex3" name="Webfunds">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200' stroke="rgb(6,170,226)">
+            <defs>
+                <pattern id="img3" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image xlink:href="css/images/WebFunds.png" x="0" y="0" width="64" height="64" />
+                </pattern>
+            </defs>
+            <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="url(#img3)"/>
+            </svg>
+        </div>
+        
+        <div class="edu_hex edu_hex4" name="CSharp">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200' stroke="rgb(6,170,226)">
+            <defs>
+                <pattern id="img4" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image xlink:href="css/images/CSharp.png" x="0" y="0" width="64" height="64" />
+                </pattern>
+            </defs>
+            <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="url(#img4)"/>
+            </svg>
+        </div>
+
+        <!-- <div class="edu_hex edu_hex5" name="Webfunds">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='200' height='200' stroke="rgb(6,170,226)">
+            <defs>
+                <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image xlink:href="" x="0" y="0" width="64" height="64" />
+                </pattern>
+            </defs>
+            <path d='M64 32 L48 4 L16 4 L0 32 L16 60 L48 60 Z' fill="" id="filler"/>
+            </svg>
+        </div> -->
+
+        <div class="CSharp-description selection">
+
+            <p>Our C# ASP.NET Stack started out with the fundamentals of Object Oriented Programming. We took what we learned in OOP and applied it to our web apps using ASP.NET and Visual Studio.</p>
+
+            <h3>ASP.NET</h3>
+            <h5>Description:</h5>
+            <ul>
+                <li>.NET is a developer platform made up of tools, programming languages, and libraries for building many different types of applications.</li>
+                <li>ASP.NET extends the .NET developer platform with tools and libraries specifically for building web apps.</li>
+            </ul>
+            <h3>Classes</h3>
+            <h3>Object Oriented Programming</h3>
+            <ul>
+                <li>Inheritance</li>
+                <li>Polymorphism</li>
+                <li>Encapsulation</li>
+                <li>Abstraction</li>
+            </ul>
+            <p></p>
+            <h3>MySQL</h3>
+            <h5>Description:</h5>
+            <ul>
+                <li>MySQL is an open-source relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language.</li>
+            </ul>
+            <button class="back-button">Back</button>
+        </div>
+        
+        <div class="Python-description selection">
+            <p>Our python stack involved learning about Flask, Django, and SQL.</p>
+            <h3>Flask</h3>
+            <h5>Description:</h5>
+            <ul>
+                <li>Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.</li>
+                <li>This was our first introduction to doing CRUD applications using any kind of framework.</li>
+            </ul>
+            <h3>Django</h3>
+            <h5>Description:</h5>
+            <ul>
+                <li>Django is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern. It is maintained by the Django Software Foundation, an independent organization established as a 501 non-profit. Django's primary goal is to ease the creation of complex, database-driven websites.</li>
+                <li>Django was our first professional level framework where we put our CRUD knowledge to the ultimate test.</li>
+            </ul>
+            <h3>SQL</h3>
+            <h5>Description:</h5>
+            <ul>
+                <li>SQLite is a relational database management system contained in a C library. In contrast to many other database management systems, SQLite is not a client–server database engine. Rather, it is embedded into the end program.</li>
+                <li>For our first database, </li>
+            </ul>
+            <p></p>
+            <button class="back-button">Back</button>
+        </div>
+        
+        <div class="Mean-description selection">
+            <h3>Mongo</h3>
+            <h3>Express</h3>
+            <h3>Angular</h3>
+            <h3>Node</h3>
+            <ul>
+                <li>Inheritance</li>
+                <li>Polymorphism</li>
+                <li>Encapsulation</li>
+                <li>Abstraction</li>
+            </ul>
+            <p></p>
+            <button class="back-button">Back</button>
+        </div>
+        
+        <div class="Webfunds-description selection">
+            <h3>HTML</h3>
+            <h3>CSS</h3>
+            <h3>JavaScript</h3>
+            <h3>JQuery</h3>
+            <ul>
+                <li>Inheritance</li>
+                <li>Polymorphism</li>
+                <li>Encapsulation</li>
+                <li>Abstraction</li>
+            </ul>
+            <p></p>
+            <button class="back-button">Back</button>
+        </div>
+
+        </div>
+        <div>
+    </div>
+</body>

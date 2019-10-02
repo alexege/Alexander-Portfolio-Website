@@ -98,6 +98,14 @@
         border-top: 2px solid white;
     }
 
+    .email {
+        color: white;
+        position: absolute;
+        top: calc(50% - 20px);
+        right: 20px;
+        transform: rotate(-90deg);
+    }
+
 /* ---------------------------Navbar--------------------------- */
 
     .navbar {
@@ -338,6 +346,10 @@
     padding: 15px;
 }
 
+.skills {
+    padding: 15px;
+}
+
 .skill-item {
     display: inline-block;
     padding: 10px;
@@ -422,7 +434,36 @@
     color: rgb(100, 255, 218);
 }
 
+/* ---------------------------Education--------------------------- */
+.education-content {
+    color: white;
+}
 
+.education-content h2 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+}
+
+.selection {
+    opacity: 0;
+}
+
+.back-button {
+    position: absolute;
+    background-color: transparent;
+    color: rgb(6,174,226);
+    z-index: 999999;
+    left: calc(50% - 16px);
+    padding: 10px;
+    border: 1px solid #06aae2;
+    margin: 0 auto;
+}
+
+.back-button:hover {
+    color: white;
+    border: 1px solid white;
+}
 
 /* ---------------------------Projects--------------------------- */
 .project-container {
@@ -433,6 +474,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 5px;
+    padding: 10px;
+    margin-top: 3%;
 }
 
 .project-container h2 {
@@ -454,17 +497,113 @@
     font-weight: bold;
 }
 
-.project-container img {
-    max-height: 500px;
+.project-box img {
+    max-height: 300px;
+    width: 100%;
+}
+
+.project {
+    margin: 15px;
+}
+
+.project img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 15px;
 }
 
 .project-box {
     background-color: rgb(6,174,226, 0.75);
     /* border: 2px solid rgb(100, 255, 218); */
-    min-height: 300px;
+    min-height: 80vh;
+    /* min-width: 300px; */
+    width: 100%;
+    position: relative;
     /* display: inline-block; */
+    color: white;
+    font-weight: 500;
 }
 
+.project-box:hover {
+    background-color: rgb(6,174,226, 0.85);
+    transform: scale(1.05);
+    animation: fadeInOut 2s infinite;
+}
+
+@-webkit-keyframes fadeInOut {
+    0% {
+        background-color: rgb(6,174,226, 0.90);
+        /* border-top: 0px solid white;
+        border-bottom: 0px solid white; */
+    }
+    50% {
+        background-color: rgb(6,174,226, 1);
+        /* border-top: 2px solid white;
+        border-bottom: 2px solid white; */
+    }
+    100% {
+        background-color: rgb(6,174,226, 0.90);
+        /* border-top: 0px solid white;
+        border-bottom: 0px solid white; */
+    }
+}
+
+.project-box .corner {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: white;
+}
+
+.project-box ul {
+    display: inline-block;
+}
+
+.technologies {
+    color: white;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.links {
+    color: white;
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+.links i {
+    padding: 10px;
+    font-size: 28px;
+    color: white;
+}
+
+.links i:hover {
+    color: rgb(100, 255, 218);
+}
+
+.technologies h5 {
+    display: inline-block;
+}
+
+/* .project-box i:hover {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: rgb(100, 255, 218);
+} */
+
+.overlay-content {
+    color: white;
+}
+
+.overlay-content img {
+    min-width: 500px;
+    max-width: 1000px;
+}
 
 .block {
     width: 50px;
@@ -482,8 +621,56 @@
     background-color: black;
 }
 
+.edu_hex1 {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 100px);
+    top: calc(50vh - 275.5px);
+}
+
+.edu_hex2 {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 100px);
+    top: calc(50vh - 100px);
+}
+
+.edu_hex3 {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% + 50px);
+    top: calc(50vh - 12px);
+}
+
+.edu_hex4 {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 250px);
+    top: calc(50vh - 12.5px);
+}
 
     /* Hex things */
+
+    .enter_hex {
+        /* fill: rgb(6,174,226, 0.85); */
+
+        /* fill: rgb(100, 255, 218, 0.5);
+        fill: red; */
+        stroke:white;
+        fill: none;
+        position: absolute;
+        z-index: 9999999999;
+        left: calc(50% - 100px);
+        top: calc(50vh - 87.5px);
+        /* stroke-width: 5;       */
+        /* stroke-dasharray: 1000; */
+        /* stroke-dashoffset: 1000;   */
+        animation: dash 4s linear forwards infinite;
+    }
+
+    .enter_hex:hover {
+        fill: rgb(6,174,226, 0.25);
+    }
 
     .hexagon {
         /* opacity: 0; */
@@ -491,17 +678,32 @@
         fill: rgb(6,174,226, 0.85);
         /* fill: black; */
         stroke:white;
-        /* stroke-width: 5;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000; */
-        /* animation: dash 5s linear forwards; */
+        /* stroke-width: 5; */
+        /* stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 5s linear forwards; */
     }
       
-      /* @keyframes dash {
-        to {
-          stroke-dashoffset: 0;
+      @keyframes dash {
+        0% {
+            /* fill: rgb(6,174,226, 0.05); */
+            /* opacity: 0; */
+            /* fill: white; */
+            stroke-width:0;
         }
-      } */
+        50% {
+            /* fill: rgba(6,174,226,1); */
+            /* opacity: 1; */
+            stroke-dashoffset: 0;
+          stroke-width: 5;
+        }
+        100% {
+            /* fill: rgb(6,174,226, 0.05);         */
+            /* opacity: 0; */
+          /* stroke-dashoffset: 0; */
+          stroke-width: 0;
+        }
+      }
 
     /* .hexagon:hover {
         animation-name: fade;
@@ -1272,3 +1474,86 @@
         left: calc(50% - 1150px);
         top: calc(50vh + 350px);
     }
+
+/* playground */
+.playground {
+    width: 1000px;
+    left: calc(50% - 500px);
+    top: calc(50% - 255px);
+    position: absolute;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+.block {
+    border: 0.5px solid white;
+    background-color: rgb(255,255,255,0.25);
+    box-shadow: 2px 2px 5px;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 10px;
+    margin: 5px;
+}
+
+.playground div {
+    line-height: 0;
+    overflow: hidden;
+}
+
+
+/* Side Modal */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    /* top: 25%; */
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    /* padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s; */
+    text-decoration: none;
+    color: #06aae2;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    z-index: 10;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }

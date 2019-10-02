@@ -6,41 +6,130 @@
      -->
 <div class="project-container">
 
+    <!-- BlurReadNav -->
+    <div id="blurreadNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a> -->
+    
+    <div class="overlay-content" id="BlurReadContent">
+        <h1>Blurread</h1>
+        <p>Blurread is a project I have been co-developing with my friend <a href="https://github.com/kianchachi">Kian Chachi</a>.</p>
+        <p>During our time at Coding Dojo, we joined forces to create a unique anonymous socail media platform.</p>
+        <p>The site was born early into our python stack and has seen several significant imporvements over each iteration.</p>
+        <a href="css\images\BlurReadFull01.png"><img src="css/images/BlurReadFull01.png" alt=""></a>
+        <a href="css\images\BlurReadFull02.png"><img src="css/images/BlurReadFull02.png" alt=""></a>
+        </div>
+    </div>
+
+    <!-- SlickNotesNav -->
+    <div id="slickNotesNav" class="overlay" id="SlickNotesContent">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNavMiddle()">&times;</a>
+        <div class="overlay-content">
+            <h1>Slick Notes</h1>
+            <p>Slick Notes is a project I am using to document all my notes in one convenient place.</p>
+            <a href=""><img src="css/images/SlickNotesFull01.png" alt=""></a>
+            <a href=""><img src="css/images/SlickNotesFull02.png" alt=""></a>
+        </div>
+    </div>
+
+    <!-- JavascriptPlaygroundNav -->
+    <div id="javascriptplaygroundNav" class="overlay" id="JavaScriptPlayGroundContent">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
+        <div class="overlay-content">
+            <h1>JavaScript Playground</h1>
+            <p>JavaScript Playground is a bit of a sandbox of my favorite jquery animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>
+            <a href=""><img src="css/images/jsplayground.png" alt=""></a>
+        </div>
+    </div>
+
     <div class="project-box grid-item">
+        <div class="project" onclick="openNav()">
+        <a href=""><i class="fas fa-external-link-square-alt corner"></i></a>
         <h2>Blurread</h2>
-        <p>Blurread is an anonymous social media app designed to allow users to post anything they want to.</p>
         <img src="css/images/blurread.png" alt="blurread">
-        <p>Built with:</p>
-        <ul>
-            <li>Django</li>
-            <li>MySql</li>
-        </ul>
+        <p>Blurread is an anonymous social media app designed to allow users to post anything they want to.</p>
         <p>This app is meant to ...</p>
+        <!-- <a href=""><i class="fab fa-github"></i></a> -->
+        <div class="links">
+        <a href=""><i class="fab fa-github"></i></a>
+        <a href=""><i class="fas fa-external-link-square-alt"></i></a>
+        <!-- <a href=""><i class="fab fa-github"></i></a> -->
+        </div>
+        <div class="technologies">
+            <h5>Python</h5>
+            <h5>Django</h5>
+            <h5>SQLite</h5>
+        </div>
+    </div>
     </div>
     <div class="project-box grid-item">
+        <div class="project" onclick="openNavMiddle()">
+        <a href=""><i class="fas fa-external-link-square-alt corner"></i></a>
         <h2>Slick Notes</h2>
-        <p>Slick notes is an intuitive note taking app.</p>
-        <p>Built with:</p>
-        <ul>
-            <li>Django</li>
-        </ul>
+        <img src="css/images/slicknotes2.png" alt="slicknotes">
+        <p>Slick notes is an intuitive multi-platform note taking app.</p>
         <p>The purpose of this app is to allow a user to take notes electronically.
-            I wanted to give it a 
+            I wanted to give users the ability to take notes on the fly and have a universal location where they could access them at a moment's notice.
         </p>
+        <div class="links">
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fas fa-external-link-square-alt"></i></a>
+            <!-- <a href=""><i class="fab fa-github"></i></a> -->
+        </div>
+        <div class="technologies">
+                <h5>Python</h5>
+                <h5>Django</h5>
+                <h5>SQLite</h5>
+            </div>
+        </div>
     </div>
     <div class="project-box grid-item">
+        <div class="project" onclick="openNavRight()">
+        <a href=""><i class="fas fa-external-link-square-alt corner"></i></a>
         <h2>JavaScript Playground</h2>
-        <p>Slick notes is an intuitive note taking app.</p>
-        <p>Built with:</p>
-        <ul>
-            <li>Django</li>
-        </ul>
-        <p>The purpose of this app is to allow a user to take notes electronically.
-            I wanted to give it a 
-        </p>
+        <img src="css/images/jsplayground.png" alt="jsplayground">
+        <p>JavaScript Playground is a bit of a sandbox of my favorite jquery animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>
+        <div class="links">
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fas fa-external-link-square-alt"></i></a>
+            <!-- <a href=""><i class="fab fa-github"></i></a> -->
+        </div>
+        <div class="technologies">
+                <h5>HTML/CSS</h5>
+                <h5>JavaScript</h5>
+                <h5>JQuery</h5>
+            </div>
+        </div>
     </div>
 </div>
 
-<button onclick="ToggleMenu()">Return</button>
+<!-- <button onclick="ToggleMenu()">Return</button> -->
 
 <!-- <script src="script.js"></script> -->
+
+<script>
+    function openNav() {
+        document.getElementById("blurreadNav").style.width = "100%";
+    }
+      
+    function closeNav() {
+        document.getElementById("blurreadNav").style.width = "0%";
+    }
+
+    function openNavMiddle() {
+        document.getElementById("slickNotesNav").style.width = "100%";
+    }
+      
+    function closeNavMiddle() {
+        document.getElementById("slickNotesNav").style.width = "0";
+    }
+
+    function openNavRight() {
+        console.log("OpenNavRight")
+        document.getElementById("javascriptplaygroundNav").style.width = "100%";
+    }
+      
+    function closeNavRight() {
+        document.getElementById("javascriptplaygroundNav").style.width = "0";
+    }
+</script>
