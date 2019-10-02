@@ -18,7 +18,51 @@
 
 <!-- <button onclick="avoidMouse()" style="position: absolute; z-index:9999999">Avoid Mouse</button> -->
 
+<button onclick="rainbowHover()">Rainbow</button>
+<button onclick="blueHover()" class="blueButton">blue</button>
+
 <script>
+$(".blueButton").css({"border" : "5xp solid yellow"});
+
+toggleBlue = true;
+function blueHover(){
+  if(toggleBlue){
+    $(".block").mouseover(function(){
+      $(this).css({"background-color" : "blue"});
+    })
+    toggleBlue = false;
+  } else {
+    $(this).css({"border" : "1xp solid transparent"});
+    $(".block").hover(function(){
+      $(this).css({"background-color" : "white"});
+    })
+    toggleBlue = true;
+  }
+}
+
+toggleRainbow = true;
+function rainbowHover(){
+  if(toggleRainbow){
+    var colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#8B00FF"];
+    i = 0;
+    $(".block").mouseover(function(){
+      if(i == 7){
+        i = 0;
+      }
+      $(this).css({"background-color" : colors[i]});
+      i++;
+    })
+    toggleRainbow = false;
+    console.log("ToggleRainbow: " + toggleRainbow)
+
+  } else {
+    $(".block").hover(function(){
+      $(this).css({"background-color" : "white"});
+    })
+    toggleRainbow = true;
+    console.log("ToggleRainbow: " + toggleRainbow)
+  }
+}
 
 // avoid = true;
 // function avoidMouse(){

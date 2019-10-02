@@ -34,6 +34,8 @@ $(document).ready(function(){
     // setInterval(randFade, 100);
     
     moveHexToFront();
+    // hideOdd();
+
 
     $(".enter_hex").click(function(){
         staggeredDissapear();
@@ -62,6 +64,12 @@ $(document).ready(function(){
     //     console.log("MOuse is uP");
     //     mouseIsDown = false;
     // })
+
+    function fadeReverse(){
+        for(var i = 115; i > 0; i--){
+            $(`.hex${i}`).animate({"opacity" : "1"}, 100 * i);
+        }
+    }
 
     function randFade(){
         var rand_hex = Math.ceil(Math.random()*114);
@@ -623,7 +631,7 @@ $(document).ready(function(){
     //     $(".container").append(`<p class="${j}">Hex</p>`);
     // }
 
-    console.log($(window).width());
+    // console.log($(window).width());
 
     $("#ajax_about_page").click(function(){
         $.ajax({url: "about.html", success: function(result){
@@ -643,6 +651,7 @@ $(document).ready(function(){
     $("#ajax_education_page").click(function(){
         $.ajax({url: "education.html", success: function(result){
             $("#main_content").html(result);
+            fadeReverse();
         }});
     });
 

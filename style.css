@@ -332,6 +332,7 @@
     text-align: center;
     margin: 0 auto;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .aboutme-container h2 {
@@ -344,6 +345,9 @@
     overflow: hidden;
     max-width: 600px;
     padding: 15px;
+    background-color: rgb(100, 255, 218, 0.5);
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .skills {
@@ -447,6 +451,7 @@
 
 .selection {
     opacity: 0;
+    margin-top: 50px;
 }
 
 .back-button {
@@ -481,6 +486,7 @@
 .project-container h2 {
     text-align: center;
     color: white;
+    
 }
 
 .project-container ul li:before {
@@ -504,6 +510,10 @@
 
 .project {
     margin: 15px;
+}
+
+.project p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .project img {
@@ -677,7 +687,8 @@
         /* fill: rgb(100, 255, 218); */
         fill: rgb(6,174,226, 0.85);
         /* fill: black; */
-        stroke:white;
+        stroke: white;
+        stroke-width: 2;
         /* stroke-width: 5; */
         /* stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
@@ -1477,9 +1488,9 @@
 
 /* playground */
 .playground {
-    width: 1000px;
-    left: calc(50% - 500px);
-    top: calc(50% - 255px);
+    width: 1100px;
+    left: calc(50% - 550px);
+    top: calc(50% - 300px);
     position: absolute;
     margin: 0 auto;
     /* border: 1px solid red; */
@@ -1488,10 +1499,10 @@
 
 .block {
     border: 0.5px solid white;
-    background-color: rgb(255,255,255,0.25);
+    background-color: rgb(255,255,255);
     box-shadow: 2px 2px 5px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 0;
     padding: 10px;
     margin: 5px;
