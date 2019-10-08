@@ -38,6 +38,15 @@
         width: 0px;  /* Remove scrollbar space */
     }
 
+    #ink {
+        display: none;
+    }
+
+    .media-links ul li a span {
+        color: #0ffbf9;
+        /* font-weight: 600; */
+    }
+
 /* ---------------------------Misc--------------------------- */
 
     .grid-container-odd {
@@ -104,6 +113,11 @@
         top: calc(50% - 20px);
         right: 20px;
         transform: rotate(-90deg);
+        text-decoration: none;
+    }
+
+    .email:hover {
+        color: #0ffbf9;
     }
 
 /* ---------------------------Navbar--------------------------- */
@@ -226,7 +240,7 @@
         text-shadow: -4px 0 #f14492;
         animation: effect 3s infinite linear;
     }
-    /* @-webkit-keyframes effect {
+    @-webkit-keyframes effect {
         0% {
             transform: translate3d(-5px, 0, 0);
         }
@@ -236,9 +250,9 @@
         100% {
             transform: translate3d(-5px, 0, 0);
         }
-    } */
+    }
 
-    @-webkit-keyframes effect {
+    /* @-webkit-keyframes effect {
         0% {
             clip: rect(55px, 9999px, 56px, 0);
         }
@@ -302,14 +316,15 @@
         100% {
             clip: rect(17px, 9999px, 79px, 0);
         }
-    }
+    } */
 
 #main_content {
     /* border: 1px solid white;  */
     min-height: 100vh;
     max-width: 1000px;
     margin: 0 auto;
-    padding-top: 30px;
+    /* padding-top: 30px; */
+    padding-top: 2%;
 }
 
 #screen {
@@ -345,7 +360,8 @@
     overflow: hidden;
     max-width: 600px;
     padding: 15px;
-    background-color: rgb(100, 255, 218, 0.5);
+    background-color: rgb(6,174,226, 0.35);
+    /* background-color: rgb(100, 255, 218, 0.5); */
     font-weight: bold;
     border-radius: 5px;
 }
@@ -384,13 +400,15 @@
 .resume h1 {
     /* color: rgb(100, 255, 218); */
     color: rgb(6,174,226);
-    font-family: vintage;
+    /* font-family: vintage; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 66px;
     font-weight: 100;
 }
 
 .resume h3 {
-    color: rgb(100, 255, 218);
+    /* color: rgb(100, 255, 218); */
+    color: rgb(6,174,226);
     font-size: 20px;
     border-bottom: 2px solid white;
     margin: 5px 0;
@@ -433,6 +451,12 @@
     /* use em or % */
   }
 
+.resume a {
+    text-decoration: none;
+    font-style: none;
+    color: #06aae2;
+}
+
 .right {
     float: right;
     color: rgb(100, 255, 218);
@@ -441,6 +465,8 @@
 /* ---------------------------Education--------------------------- */
 .education-content {
     color: white;
+    width: 750px;
+    margin: 0 auto;
 }
 
 .education-content h2 {
@@ -450,7 +476,7 @@
 }
 
 .selection {
-    opacity: 0;
+    /* opacity: 0; */
     margin-top: 50px;
 }
 
@@ -519,11 +545,11 @@
 .project img {
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow: 2px 2px 15px;
+    box-shadow: 1px 1px 8px black;
 }
 
 .project-box {
-    background-color: rgb(6,174,226, 0.75);
+    background-color: rgb(6,174,226, 0.5);
     /* border: 2px solid rgb(100, 255, 218); */
     min-height: 80vh;
     /* min-width: 300px; */
@@ -535,7 +561,7 @@
 }
 
 .project-box:hover {
-    background-color: rgb(6,174,226, 0.85);
+    background-color: rgb(6,174,226, 0.75);
     transform: scale(1.05);
     animation: fadeInOut 2s infinite;
 }
@@ -618,7 +644,6 @@
 .block {
     width: 50px;
     height: 50px;
-    background-color: white;
     border: 1px solid black;
     display: inline-block;
 }
@@ -666,7 +691,7 @@
 
         /* fill: rgb(100, 255, 218, 0.5);
         fill: red; */
-        stroke:white;
+        stroke:cyan;
         fill: none;
         position: absolute;
         z-index: 9999999999;
@@ -685,10 +710,13 @@
     .hexagon {
         /* opacity: 0; */
         /* fill: rgb(100, 255, 218); */
-        fill: rgb(6,174,226, 0.85);
+        fill: rgb(6,174,226, 0.55);
+        fill: black;
         /* fill: black; */
+        /* stroke: rgba(3, 96, 124, 0.85); */
         stroke: white;
-        stroke-width: 2;
+        stroke: rgb(6,174,226, 0.5);
+        stroke-width: 1.5;
         /* stroke-width: 5; */
         /* stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
@@ -716,22 +744,45 @@
         }
       }
 
-    /* .hexagon:hover {
-        animation-name: fade;
-        animation-duration: 5s;
+    .hexagon:hover {
+        /* animation-name: fade;
+        animation-duration: 1s; */
+        stroke: #0ffbf9;
+        fill: rgb(6,174,226, 0.25);
+        /* transform: rotate(180deg) scale(0.75);
+        transition: all 0.5s ease-out;
+        transform: rotate(-180deg) scale(1.15);
+        transition: all 0.5s ease-out; */
+        /* animation: fadeInAndOut 2s infinite; */
     }
 
-    @-webkit-keyframes fade {
+    @-webkit-keyframes fadeInAndOut {
         0% {
-            opacity: 1;
+            transform: rotate(180deg) scale(1.10);
+
+        }
+        50% {
+            transform: rotate(180deg) scale(0.75);
         }
         100% {
-            opacity: 0;
+
         }
     }
+
+    /* @-webkit-keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }  */
     svg:hover {
-        fill: white;
-    } */
+        /* fill: white; */
+        /* transform: rotate(180deg) scale(0.75);
+        transition: all 0.5s ease-out; */
+        
+    }
 
 .project_hexagon:hover {
     fill: url("css/images/WebFunds.png");
@@ -1498,8 +1549,9 @@
 }
 
 .block {
-    border: 0.5px solid white;
-    background-color: rgb(255,255,255);
+    /* border: 0.5px solid white; */
+    background-color: rgb(255,255,255,0.9);
+    /* background-color: transparent; */
     box-shadow: 2px 2px 5px;
     width: 30px;
     height: 30px;
@@ -1508,9 +1560,21 @@
     margin: 5px;
 }
 
+.hidden {
+    opacity: 0;
+}
+
 .playground div {
     line-height: 0;
     overflow: hidden;
+}
+
+.bg_video {
+    /* width: 1920px; */
+    /* height: 100%; */
+    width: 100vw;
+    position: fixed;
+    z-index: -2;
 }
 
 

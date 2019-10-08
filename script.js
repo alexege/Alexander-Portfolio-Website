@@ -1,7 +1,3 @@
-$(".project_hex1").click(function(){
-    console.log("Triggered");
-})
-
 var toggle;
 function ToggleMenu(){
     if(toggle){
@@ -17,16 +13,41 @@ function ToggleMenu(){
     }
 }
 
+$(".hexagon").hover(function(){
+    // $(this).css({"stroke" : "white", "width" : "0", "height" : "0"}).delay(1000).animate({"width":"200px", "height":"175px"});
+    $(this).css({"opacity":"0"}).animate({"opacity":"1"},2000);
+});
+
+// $(".hexagon").hover(function(){
+//     if($(this).hasClass('hover_filled')){
+//         $(this).animate({"opacity":"0"});
+//         $(this).removeClass('hover_filled');
+//     } else {
+//         $(this).animate({"opacity":"1"});
+//         $(this).addClass('hover_filled');
+//     }
+// });
+
+$(".hexagon").click(function(){
+    if($(this).hasClass('filled')){
+        $(this).css({"fill":"none"})
+        $(this).removeClass('filled');
+    } else {
+        $(this).css({"fill":"rgb(6,174,226, 0.25)"})
+        $(this).addClass('filled');
+    }
+});
+
 $(document).ready(function(){
-    console.log("Document loaded successfully");
     // hideAllHexagons();
     // staggeredDissapear();
     // staggeredReappear();
     // randomlyDissapear();
-    // hideOdd();
+    hideOdd();
     // hideEven();
     // spiralHideShow();
-    // colorwave();
+    // colorwavefill();
+    // colorwavestroke();
     // randomFade();
     // randFill();
     // singleRandFill();
@@ -38,18 +59,26 @@ $(document).ready(function(){
 
 
     $(".enter_hex").click(function(){
+        console.log("Staggered Dissapear");
         staggeredDissapear();
-        $(this).fadeOut();
-        $("#ajax_about_page").click();
+
+        setTimeout(function(){
+            console.log("This fadeout");
+            $(this).fadeOut();
+        }, 2000);
+
+        setTimeout(function(){
+            $("#ajax_about_page").click();
+        }, 2000);
         // hideVisibleHex();
         // randomlyDissapear();
         // moveHexToBack();
     });
 
     $(".enter_hex").hover(function(){
-        $(this).stop().css({"stroke":"white" ,"stroke-width":"3"});
+        $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" ,"stroke-width":"3"});
     }, function(){
-        $(this).stop().css({"stroke":"white" , "stroke-width":"0"});
+        $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" , "stroke-width":"0"});
     })
 
     $(".project_hex1").click(function(){
@@ -99,19 +128,19 @@ $(document).ready(function(){
         return rand;
     })
 
-    $(".hexagon").hover(function(){
-        if(mouseIsDown){
+    // $(".hexagon").hover(function(){
+    //     if(mouseIsDown){
+    //         $(this).parent().css({"stroke" : "white"});
+    //         if($(this).attr("isStroked") == "true"){
+    //             console.log("Is true");
+    //             $(this).css({"fill" : rand})
+    //         }
 
-            if($(this).attr("isStroked") == "true"){
-                console.log("Is true");
-                $(this).css({"fill" : rand})
-            }
-
-            console.log($(this).attr("stroke-dashoffset"))
-            $(this).animate({"stroke-dashoffset" : "0"});
-            $(this).attr("isStroked", "true");
-        }
-    });
+    //         console.log($(this).attr("stroke-dashoffset"))
+    //         $(this).animate({"stroke-dashoffset" : "0"});
+    //         $(this).attr("isStroked", "true");
+    //     }
+    // });
     }
 
 
@@ -215,15 +244,36 @@ $(document).ready(function(){
             $(".hex16").stop().delay(1250).fadeOut();
             $(".hex18").stop().delay(1250).fadeOut();
             
-            $(".hex9").stop().delay(2500).fadeOut();
-            $(".hex11").stop().delay(2500).fadeOut();
-            $(".hex13").stop().delay(2500).fadeOut();
-            $(".hex15").stop().delay(2500).fadeOut();
-            $(".hex17").stop().delay(2500).fadeOut();
-            $(".hex19").stop().delay(2500).fadeOut();
+            $(".hex9").stop().delay(2000).fadeOut();
+            $(".hex11").stop().delay(2000).fadeOut();
+            $(".hex13").stop().delay(2000).fadeOut();
+            $(".hex15").stop().delay(2000).fadeOut();
+            $(".hex17").stop().delay(2000).fadeOut();
+            $(".hex19").stop().delay(2000).fadeOut();
+            
+            $(".hex20").stop().delay(3000).fadeOut();
+            $(".hex21").stop().delay(3000).fadeOut();
+            $(".hex22").stop().delay(3000).fadeOut();
+            $(".hex23").stop().delay(3000).fadeOut();
+            $(".hex24").stop().delay(3000).fadeOut();
+            $(".hex25").stop().delay(3000).fadeOut();
+            $(".hex26").stop().delay(3000).fadeOut();
+            $(".hex27").stop().delay(3000).fadeOut();
+            $(".hex28").stop().delay(3000).fadeOut();
+            $(".hex29").stop().delay(3000).fadeOut();
+            $(".hex30").stop().delay(3000).fadeOut();
+            $(".hex31").stop().delay(3000).fadeOut();
+            $(".hex32").stop().delay(3000).fadeOut();
+            $(".hex33").stop().delay(3000).fadeOut();
+            $(".hex34").stop().delay(3000).fadeOut();
+            $(".hex35").stop().delay(3000).fadeOut();
+            $(".hex36").stop().delay(3000).fadeOut();
+            $(".hex37").stop().delay(3000).fadeOut();
+            $(".hex38").stop().delay(3000).fadeOut();
 
             $(".education-content").hide().append(`<h2>${selection}</h2>`).append($(`.${selection}-description`)).delay(1000).fadeIn(1000);
-            $(`.${selection}-description`).animate({"opacity":"1"});
+            // $(`.${selection}-description`).animate({"opacity":"1"});
+            $(`.${selection}-description`).css({"display" : "block"});
             toggle = false;
         // } else {
         //     $(".edu_hex1").stop().animate({"top" : "+=75px"}, 2000)
@@ -232,6 +282,50 @@ $(document).ready(function(){
         //     toggle = true;
         // }
     })
+
+    function bringBackHex(){
+        $(".hex1").stop().delay(100).fadeIn();
+        $(".hex2").stop().delay(200).fadeIn();
+        $(".hex3").stop().delay(300).fadeIn();
+        $(".hex4").stop().delay(400).fadeIn();
+        $(".hex5").stop().delay(500).fadeIn();
+        $(".hex6").stop().delay(600).fadeIn();
+        $(".hex7").stop().delay(700).fadeIn();
+        
+        $(".hex8").stop().delay(1250).fadeIn();
+        $(".hex10").stop().delay(1250).fadeIn();
+        $(".hex12").stop().delay(1250).fadeIn();
+        $(".hex14").stop().delay(1250).fadeIn();
+        $(".hex16").stop().delay(1250).fadeIn();
+        $(".hex18").stop().delay(1250).fadeIn();
+        
+        $(".hex9").stop().delay(2500).fadeIn();
+        $(".hex11").stop().delay(2500).fadeIn();
+        $(".hex13").stop().delay(2500).fadeIn();
+        $(".hex15").stop().delay(2500).fadeIn();
+        $(".hex17").stop().delay(2500).fadeIn();
+        $(".hex19").stop().delay(2500).fadeIn();
+
+        $(".hex20").stop().delay(3000).fadeIn();
+        $(".hex21").stop().delay(3000).fadeIn();
+        $(".hex22").stop().delay(3000).fadeIn();
+        $(".hex23").stop().delay(3000).fadeIn();
+        $(".hex24").stop().delay(3000).fadeIn();
+        $(".hex25").stop().delay(3000).fadeIn();
+        $(".hex26").stop().delay(3000).fadeIn();
+        $(".hex27").stop().delay(3000).fadeIn();
+        $(".hex28").stop().delay(3000).fadeIn();
+        $(".hex29").stop().delay(3000).fadeIn();
+        $(".hex30").stop().delay(3000).fadeIn();
+        $(".hex31").stop().delay(3000).fadeIn();
+        $(".hex32").stop().delay(3000).fadeIn();
+        $(".hex33").stop().delay(3000).fadeIn();
+        $(".hex34").stop().delay(3000).fadeIn();
+        $(".hex35").stop().delay(3000).fadeIn();
+        $(".hex36").stop().delay(3000).fadeIn();
+        $(".hex37").stop().delay(3000).fadeIn();
+        $(".hex38").stop().delay(3000).fadeIn();
+    }
 
     $("body").on('click', '.back-button', function(){
         $(".edu_hex1").finish().fadeIn().animate({"top" : "+=75px"},1000)
@@ -259,6 +353,26 @@ $(document).ready(function(){
         $(".hex15").stop().delay(2500).fadeIn();
         $(".hex17").stop().delay(2500).fadeIn();
         $(".hex19").stop().delay(2500).fadeIn();
+
+        $(".hex20").stop().delay(3000).fadeIn();
+        $(".hex21").stop().delay(3000).fadeIn();
+        $(".hex22").stop().delay(3000).fadeIn();
+        $(".hex23").stop().delay(3000).fadeIn();
+        $(".hex24").stop().delay(3000).fadeIn();
+        $(".hex25").stop().delay(3000).fadeIn();
+        $(".hex26").stop().delay(3000).fadeIn();
+        $(".hex27").stop().delay(3000).fadeIn();
+        $(".hex28").stop().delay(3000).fadeIn();
+        $(".hex29").stop().delay(3000).fadeIn();
+        $(".hex30").stop().delay(3000).fadeIn();
+        $(".hex31").stop().delay(3000).fadeIn();
+        $(".hex32").stop().delay(3000).fadeIn();
+        $(".hex33").stop().delay(3000).fadeIn();
+        $(".hex34").stop().delay(3000).fadeIn();
+        $(".hex35").stop().delay(3000).fadeIn();
+        $(".hex36").stop().delay(3000).fadeIn();
+        $(".hex37").stop().delay(3000).fadeIn();
+        $(".hex38").stop().delay(3000).fadeIn();
 
         // $(".education-content").remove(".education-content");            
         $(".education-content").empty()
@@ -302,15 +416,15 @@ $(document).ready(function(){
     function moveHexToFront(){
         $("#screen").css({"opacity" : "1"})
         $(".hexagon").animate({"opacity": "0", "z-index" : "999999"});
-        staggeredReappear();
+        staggeredReappear2();
+        // animateIn();
     }
     
     function moveHexToBack(){
         console.log("MoveHexToBack start");
-        $(".hexagon").animate({"opacity": "1", "z-index" : "-1"});
+        $(".hexagon").css({"opacity": "1", "z-index" : "-1"});
         $("#screen").css({"opacity" : "0", "z-index" : -2})
         $(".enter_hex").css({"opacity" : "0", "z-index" : -20})
-        
         console.log("MoveHexToBack End");
     }
     
@@ -400,6 +514,71 @@ $(document).ready(function(){
         console.log("staggeredReappear End");
     }
 
+    function staggeredReappear2(){
+        console.log("staggeredReappear start");
+
+        // $(`.row1`).finish().animate({"opacity" : "0"});
+        // $(`.row2`).finish().delay(200).animate({"opacity" : "0.1"});
+        // $(`.row3`).finish().delay(400).animate({"opacity" : "0.15"});
+        // $(`.row4`).finish().delay(600).animate({"opacity" : "0.2"});
+        // $(`.row5`).finish().delay(800).animate({"opacity" : "0.25"});
+        // $(`.row6`).finish().delay(1000).animate({"opacity" : "0.5"});
+        // $(`.row7`).finish().delay(1200).animate({"opacity" : "0.75"});
+        // $(`.row8`).finish().delay(1400).animate({"opacity" : "1"});
+        
+        $(`.row1`).finish().animate({"opacity" : "1"});
+        $(`.row3`).finish().delay(500).animate({"opacity" : "1"},1000);
+        $(`.row5`).finish().delay(500).animate({"opacity" : "1"},1000);
+        $(`.row7`).finish().delay(500).animate({"opacity" : "1"},1000);
+        
+        // $(`.row2`).finish().delay(3000).animate({"opacity" : "1"},1000);
+        // $(`.row4`).finish().delay(3000).animate({"opacity" : "1"},1000);
+        // $(`.row6`).finish().delay(3000).animate({"opacity" : "1"},1000);
+        // $(`.row8`).finish().delay(3000).animate({"opacity" : "1"},1000);
+        console.log("staggeredReappear End");
+    }
+
+    function animateIn(){
+        $(".row1").finish().animate({"opacity" : "1"}, 1000);
+        $(".row2").finish().delay(500).animate({"opacity" : "0.7"}, 1000);
+        $(".row3").finish().delay(1500).animate({"opacity" : "0.5"}, 1000);
+        $(".row4").finish().delay(2000).animate({"opacity" : "0.4"}, 1000);
+        $(".row5").finish().delay(2500).animate({"opacity" : "0.3"}, 1000);
+        $(".row6").finish().delay(3000).animate({"opacity" : "0.2"}, 1000);
+        $(".row7").finish().delay(3500).animate({"opacity" : "0.1"}, 1000);
+        $(".row8").finish().delay(4000).animate({"opacity" : "0.05"}, 1000);
+    }
+
+    function hideAllSquares(){
+        for(var i = 0; i < 8; i++){
+            rand = Math.floor(Math.random()*17);
+            $(`.${rand}`).addClass('hidden');
+        }
+
+        // $(".2").css("opacity","0");
+        // $(".3").css("opacity","0");
+        // $(".4").css("opacity","0");
+        // $(".5").css("opacity","0");
+        // $(".6").css("opacity","0");
+        // $(".7").css("opacity","0");
+        // $(".8").css("opacity","0");
+        // $(".9").css("opacity","0");
+        // $(".10").css("opacity","0");
+        // $(".11").css("opacity","0");
+        // $(".12").css("opacity","0");
+        // $(".13").css("opacity","0");
+        // $(".14").css("opacity","0");
+
+        // $(".block").hover(function(){
+        //     $(this).css({"opacity":"1", "border":"1px solid white"}).animate({"opacity":"0"},2000)
+        // });
+
+        setInterval(function(){
+            $(".0").css("background-color", "red");
+            $(".0").animate({"opacity":"0"},1000).delay(1000).animate({"opacity":"1"},1000);
+        }, 500)
+    }
+
     // evenOdd();
 
     // function evenOdd(){
@@ -449,7 +628,7 @@ $(document).ready(function(){
     //     $(".hexagon").css({"fill" : "green"});
     // })
 
-    function colorwave(){
+    function colorwavefill(){
         var random_color_1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
         var random_color_2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
         var random_color_3 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
@@ -467,6 +646,28 @@ $(document).ready(function(){
         $(".row6").css({"fill" : random_color_6});
         $(".row7").css({"fill" : random_color_7});
         $(".row8").css({"fill" : random_color_8});
+
+        // $(".row1").delay(2000).fadeOut().css({"fill" : random_color_2}).fadeIn();
+    }
+
+    function colorwavestroke(){
+        var random_color_1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_3 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_4 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_5 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_6 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_7 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+        var random_color_8 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+
+        $(".row1").css({"stroke" : random_color_1});
+        $(".row2").css({"stroke" : random_color_2});
+        $(".row3").css({"stroke" : random_color_3});
+        $(".row4").css({"stroke" : random_color_4});
+        $(".row5").css({"stroke" : random_color_5});
+        $(".row6").css({"stroke" : random_color_6});
+        $(".row7").css({"stroke" : random_color_7});
+        $(".row8").css({"stroke" : random_color_8});
 
         // $(".row1").delay(2000).fadeOut().css({"fill" : random_color_2}).fadeIn();
     }
@@ -566,14 +767,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
     var num_rows = $(window).width() / 175;
     
     var num_hex = $(window).height() / 200;
@@ -639,6 +832,7 @@ $(document).ready(function(){
             // if(state != 1){
             //     // populate background
             // }
+            bringBackHex();
         }});
     });
 
@@ -663,7 +857,12 @@ $(document).ready(function(){
     $("#ajax_play_page").click(function(){
         $.ajax({url: "playground.html", success: function(result){
             $("#main_content").html(result);
+            $(`#ink`).css({"display":"block"});
+            $(`#ink`).get(0).play()
+            // $(`#ink`).delay(6000).fadeOut(2000);
             spiralHide();
+            hideAllSquares();
+            // showAllSquares();
         }});
     });
 
