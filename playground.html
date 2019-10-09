@@ -17,29 +17,182 @@
 </div>
 
 <!-- <button onclick="avoidMouse()" style="position: absolute; z-index:9999999">Avoid Mouse</button> -->
-
-<button onclick="rainbowHover()">Rainbow</button>
-<button onclick="blueHover()" class="blueButton">blue</button>
-<button onclick="Reset()">Reset</button>
+<div class="menu">
+  <button onclick="rainbowHover()">Rainbow</button>
+  <button onclick="redHover()" class="colorButton redButton"></button>
+  <button onclick="greenHover()" class="colorButton greenButton"></button>
+  <button onclick="blueHover()" class="colorButton blueButton"></button>
+  <button onclick="yellowHover()" class="colorButton yellowButton"></button>
+  <button onclick="whiteHover()" class="colorButton whiteButton"></button>
+  <button onclick="hideRandom()">Randomize</button>
+  <button onclick="resetGrid()">Reset</button>
+  <!-- <div id="example" style="width: 200px; height: 200px; background-color: red; z-index: 9999999; position: absolute;"></div> -->
+</div>
 
 <script>
-$(".blueButton").css({"border" : "5xp solid yellow"});
+var down = false;
+$(document).mousedown(function(){
+  down = true;
+}).mouseup(function(){
+  down = false;
+});
 
-toggleBlue = true;
-function blueHover(){
-  if(toggleBlue){
-    $(".block").mouseover(function(){
-      $(this).css({"background-color" : "blue"});
-    })
-    toggleBlue = false;
+$("#example").mousedown(function(){
+  console.log("The mouse is down");
+  $(this).css({"background-color":"green"});
+})
+
+$("#example").on('mousedown mouseover', function() {
+  if(down){
+    console.log("One or the other");
+    $(this).css({"background-color":"green"});
+  }
+})
+function testfunct(){
+  if(down){
+    console.log("Down");
   } else {
-    $(this).css({"border" : "1xp solid transparent"});
-    $(".block").hover(function(){
-      $(this).css({"background-color" : "white"});
-    })
-    toggleBlue = true;
+    console.log("Up");
   }
 }
+
+selected = false;
+$(".colorButton").click(function(){
+  $(".colorButton").removeClass("selected");
+  if($(this).hasClass('selected')){
+    console.log("has")
+    $(this).removeClass('selected');
+    // $(".block").hover(function(){
+    //   $(this).css({"background-color" : ""});
+    // });
+  } else {
+    console.log("hasnt")
+    $(this).addClass("selected");
+  }
+  console.log(selected);
+  
+  if($(this).hasClass('selected')){
+    var color = $(this).css("background-color");
+    console.log(color);
+    // $(".block").hover(function(){
+    //   $(this).css("background-color" , color);
+    // })
+    
+    selected = false;
+  } else {
+    $(this).removeClass("selected");
+    selected = true;
+  }
+
+});
+
+
+$(".blueButton").css({"background" : "blue"});
+$(".redButton").css({"background" : "red"});
+$(".greenButton").css({"background" : "green"});
+$(".yellowButton").css({"background" : "yellow"});
+$(".whiteButton").css({"background" : "white"});
+
+function redHover(){
+  selected_color = "rgb(255, 0, 0)";
+}
+function greenHover(){
+  selected_color = "rgb(0, 255, 0)";
+}
+function blueHover(){
+  selected_color = "rgb(0, 0, 255)";
+}
+function yellowHover(){
+  selected_color = "rgb(0, 255, 255)";
+}
+function whiteHover(){
+  selected_color = "rgb(255, 255, 255)";
+}
+
+// toggleRed = true;
+// function redHover(){
+//   if(toggleRed){
+//     $(".block").mouseover(function(){
+//       $(this).css({"background-color" : "red"});
+//     })
+//     toggleRed = false;
+//   } else {
+//     $(this).css({"border" : "1xp solid transparent"});
+//     $(".block").hover(function(){
+//       // $(this).css({"background-color" : "white"});
+//       $(".block").unbind();
+//     })
+//     toggleRed = true;
+//   }
+// }
+
+// toggleGreen = true;
+// function greenHover(){
+//   if(toggleGreen){
+//     $(".block").mouseover(function(){
+//       $(this).css({"background-color" : "green"});
+//     })
+//     toggleGreen = false;
+//   } else {
+//     $(this).css({"border" : "1xp solid transparent"});
+//     $(".block").hover(function(){
+//       // $(this).css({"background-color" : "white"});
+//       $(".block").unbind();
+//     })
+//     toggleGreen = true;
+//   }
+// }
+
+// toggleBlue = true;
+// function blueHover(){
+//   if(toggleBlue){
+//     $(".block").mouseover(function(){
+//       $(this).css({"background-color" : "blue"});
+//     })
+//     toggleBlue = false;
+//   } else {
+//     $(this).css({"border" : "1xp solid transparent"});
+//     $(".block").hover(function(){
+//       // $(this).css({"background-color" : "white"});
+//       $(".block").unbind();
+//     })
+//     toggleBlue = true;
+//   }
+// }
+
+// toggleYellow = true;
+// function yellowHover(){
+//   if(toggleYellow){
+//     $(".block").mouseover(function(){
+//       $(this).css({"background-color" : "yellow"});
+//     })
+//     toggleYellow = false;
+//   } else {
+//     $(this).css({"border" : "1xp solid transparent"});
+//     $(".block").hover(function(){
+//       // $(this).css({"background-color" : "white"});
+//       $(".block").unbind();
+//     })
+//     toggleYellow = true;
+//   }
+// }
+
+// toggleWhite = true;
+// function whiteHover(){
+//   if(toggleWhite){
+//     $(".block").mouseover(function(){
+//       $(this).css({"background-color" : "white"});
+//     })
+//     toggleWhite = false;
+//   } else {
+//     $(this).css({"border" : "1xp solid transparent"});
+//     $(".block").hover(function(){
+//       // $(this).css({"background-color" : "white"});
+//       $(".block").unbind();
+//     })
+//     toggleWhite = true;
+//   }
+// }
 
 toggleRainbow = true;
 function rainbowHover(){
@@ -62,6 +215,23 @@ function rainbowHover(){
     })
     toggleRainbow = true;
     console.log("ToggleRainbow: " + toggleRainbow)
+  }
+}
+
+function resetGrid(){
+  if($(".block").hasClass('hidden')){
+    $(".block").removeClass('hidden');
+  }
+  $("#ajax_play_page").click();
+}
+
+function hideRandom(){
+  if($(".block").hasClass('hidden')){
+    $(".block").removeClass('hidden');
+  }
+  for(var i = 0; i < 12; i++){
+      rand = Math.floor(Math.random()*17);
+      $(`.${rand}`).addClass('hidden');
   }
 }
 
@@ -226,27 +396,48 @@ function randomColor(){
           // $(this).animate({width: 55, height: 55});
       })
     
-      $(".block").click(function(){
-          var currentButton = parseInt($(this).attr('class').split(' ')[1]);
-          console.log("starting: ", currentButton);
-          var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-          $(`.${currentButton}`).animate({"margin": "0 10px 0 10px", opacity: 0.25}, 500);
-          $(`.${currentButton}`).animate({margin: "5px", opacity: 1.0 }, 500);
-          $(`.${currentButton}`).animate({opacity: 1.0 }, 500);
-        //   $(`.${currentButton}`).css({border: `2px solid ${random_color}`});
-          $(`.${currentButton}`).css({"background-color": `${random_color}`});
-          // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
-          // randomColor();           
-          while(currentButton < 18){
-          $(`.${currentButton + 1}`).delay(200 * currentButton/2).animate({margin: "0 10px", opacity: 0.25}, 500);
-          $(`.${currentButton + 1}`).delay(200 * currentButton/2).animate({margin: "5px", opacity: 1.0 }, 500);
-        //   $(`.${currentButton + 1}`).css({border: `2px solid ${random_color}`});
-          $(`.${currentButton + 1}`).css({"background-color": `${random_color}`});
-          // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
-          currentButton += 1;
-          // randomColor();
-          }
+      // $(".block").click(function(){
+      //     var currentButton = parseInt($(this).attr('class').split(' ')[1]);
+      //     console.log("starting: ", currentButton);
+      //     var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+      //     $(`.${currentButton}`).animate({"margin": "0 10px 0 10px", opacity: 0.25}, 500);
+      //     $(`.${currentButton}`).animate({margin: "5px", opacity: 1.0 }, 500);
+      //     $(`.${currentButton}`).animate({opacity: 1.0 }, 500);
+      //   //   $(`.${currentButton}`).css({border: `2px solid ${random_color}`});
+      //     $(`.${currentButton}`).css({"background-color": `${random_color}`});
+      //     // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
+      //     // randomColor();           
+      //     while(currentButton < 18){
+      //       if(!$(`.${currentButton + 1}`).hasClass('hidden')){
+      //         $(`.${currentButton + 1}`).delay(100 * currentButton/2).animate({margin: "0 10px", opacity: 0.25}, 500);
+      //         $(`.${currentButton + 1}`).delay(100 * currentButton/2).animate({margin: "5px", opacity: 1.0 }, 500);
+      //       //   $(`.${currentButton + 1}`).css({border: `2px solid ${random_color}`});
+      //         $(`.${currentButton + 1}`).css({"background-color": `${random_color}`});
+      //         // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
+      //         currentButton += 1;
+      //       } else {
+      //         currentButton += 1;
+      //       }
+      //     // randomColor();
+      //     }
+      // })
+
+      $(".block").mousedown(function(){
+        if($(this).css("background-color") != "rgb(255, 255, 255)"){
+          $(this).css("background-color","white");
+        } else {
+          $(this).css({"background-color": selected_color});
+        }
       })
 
+      $(".block").on('mousedown mouseover', function() {
+        if(down){
+          if($(this).css("background-color") != "rgb(255, 255, 255)"){
+            $(this).css("background-color","rgb(255, 255, 255)");
+          } else {
+            $(this).css({"background-color": selected_color});
+          }
+        }
+      })
 
 </script>

@@ -550,10 +550,27 @@ $(document).ready(function(){
     }
 
     function hideAllSquares(){
-        for(var i = 0; i < 8; i++){
-            rand = Math.floor(Math.random()*17);
-            $(`.${rand}`).addClass('hidden');
-        }
+        $(".1").hide().fadeIn(1000);
+        $(".2").hide().fadeIn(3000);
+        $(".3").hide().fadeIn(1000);
+        $(".4").hide().fadeIn(3000);
+        $(".5").hide().fadeIn(1000);
+        $(".6").hide().fadeIn(3000);
+        $(".7").hide().fadeIn(1000);
+        $(".8").hide().fadeIn(3500);
+        $(".9").hide().fadeIn(1000);
+        $(".10").hide().fadeIn(3500);
+        $(".11").hide().fadeIn(1000);
+        $(".12").hide().fadeIn(3500);
+        $(".13").hide().fadeIn(1000);
+        $(".14").hide().fadeIn(3500);
+        $(".15").hide().fadeIn(1000);
+        $(".16").hide().fadeIn(3500);
+        $(".17").hide().fadeIn(1000);
+        // for(var i = 0; i < 8; i++){
+        //     rand = Math.floor(Math.random()*17);
+        //     $(`.${rand}`).addClass('hidden');
+        // }
 
         // $(".2").css("opacity","0");
         // $(".3").css("opacity","0");
@@ -574,7 +591,7 @@ $(document).ready(function(){
         // });
 
         setInterval(function(){
-            $(".0").css("background-color", "red");
+            $(".0").css("background-color", "rgb(255,0,0,0.85)");
             $(".0").animate({"opacity":"0"},1000).delay(1000).animate({"opacity":"1"},1000);
         }, 500)
     }
