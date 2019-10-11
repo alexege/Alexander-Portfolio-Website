@@ -15,7 +15,8 @@ function ToggleMenu(){
 
 $(".hexagon").hover(function(){
     // $(this).css({"stroke" : "white", "width" : "0", "height" : "0"}).delay(1000).animate({"width":"200px", "height":"175px"});
-    $(this).css({"opacity":"0"}).animate({"opacity":"1"},2000);
+    // $(this).css({"opacity":"0"}).animate({"opacity":"1"},2000);
+    
 });
 
 // $(".hexagon").hover(function(){
@@ -32,13 +33,18 @@ $(".hexagon").click(function(){
     if($(this).hasClass('filled')){
         $(this).css({"fill":"none"})
         $(this).removeClass('filled');
+        $(this).addClass('disappear');
     } else {
         $(this).css({"fill":"rgb(6,174,226, 0.25)"})
         $(this).addClass('filled');
+        $(this).removeClass('disappear');
     }
 });
 
+
+
 $(document).ready(function(){
+    flyInUpDown();
     // hideAllHexagons();
     // staggeredDissapear();
     // staggeredReappear();
@@ -57,6 +63,10 @@ $(document).ready(function(){
     moveHexToFront();
     // hideOdd();
 
+    function flyInUpDown(){
+        // $(".up").css({"color":"red", "transform":"translate(0, -500px)"});
+        $(".up").addClass("animate_up");
+    }
 
     $(".enter_hex").click(function(){
         console.log("Staggered Dissapear");

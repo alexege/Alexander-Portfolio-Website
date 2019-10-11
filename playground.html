@@ -18,18 +18,59 @@
 
 <!-- <button onclick="avoidMouse()" style="position: absolute; z-index:9999999">Avoid Mouse</button> -->
 <div class="menu">
-  <button onclick="rainbowHover()">Rainbow</button>
+  <!-- <button onclick="rainbowHover()">Rainbow</button> -->
   <button onclick="redHover()" class="colorButton redButton"></button>
   <button onclick="greenHover()" class="colorButton greenButton"></button>
   <button onclick="blueHover()" class="colorButton blueButton"></button>
   <button onclick="yellowHover()" class="colorButton yellowButton"></button>
   <button onclick="whiteHover()" class="colorButton whiteButton"></button>
-  <button onclick="hideRandom()">Randomize</button>
+  <button onclick="hideRandom()">Randomize Pattern</button>
+  <button onclick="interactiveToggle()" id="interactive"><span id="drawSpan">Draw</span> / <span id="animateSpan">Animate</span></button>
+  <button onclick="randColorToggle()" id="randcolorButton">Random Color</button>
   <button onclick="resetGrid()">Reset</button>
+  <button onclick="stopAnimations()">STOP</button>
   <!-- <div id="example" style="width: 200px; height: 200px; background-color: red; z-index: 9999999; position: absolute;"></div> -->
 </div>
 
 <script>
+function stopAnimations(){
+  for(var i = 0; i < 115; i++){
+    $(`.${i}`).finish();
+  }
+  $(".block").finish();
+}
+
+isInteractive = true;
+// $("#interactive").css({"border":"1px solid yellow"});
+$("#drawSpan").css({"color":"red"});
+
+function interactiveToggle(){
+  if(isInteractive){
+    $("#interactive").css({"border":"1px solid cyan"});
+    $("#drawSpan").css({"color":"red", "border-bottom":"1px solid cyan"});
+    $("#animateSpan").css({"color":"white"});
+    console.log("Not Interactive!")
+    isInteractive = false;
+  } else {
+    $("#interactive").css({"border":"1px solid yellow"});
+    $("#drawSpan").css({"color":"white"})
+    $("#animateSpan").css({"color":"red", "border-bottom":"1px solid cyan"})
+    console.log("Interactive!")
+    isInteractive = true;
+  }
+}
+
+isRandColor = true;
+function randColorToggle(){
+  if(isRandColor){
+    $("#randcolorButton").text("Custom Color");
+    isRandColor = false;
+  } else {
+    $("#randcolorButton").text("Random Color");
+    isRandColor = true;
+  }
+}
+
 var down = false;
 $(document).mousedown(function(){
   down = true;
@@ -58,6 +99,15 @@ function testfunct(){
 
 selected = false;
 $(".colorButton").click(function(){
+  
+  // Change Interactive Button to say Draw and put interactive to false
+  isInteractive = false;
+  $("#interactive").css({"border":"1px solid cyan"}).text("Draw");
+
+  // Change random Color Button to say Custom color and put isRandColor to false
+  $("#randcolorButton").text("Custom Color");
+    isRandColor = false;
+
   $(".colorButton").removeClass("selected");
   if($(this).hasClass('selected')){
     console.log("has")
@@ -383,59 +433,75 @@ function randomColor(){
     // $(".0").css({"border": "1px solid red"}).html("Enter").css({"color" : "white"});
     // $(".0").html("Enter").width(60).height(60);
     
-      $("block").hover(function(){
-          $(this).css({border: "2px solid white"});
-          $(this).css({opacity: 1});
-          // $(this).animate({margin: '5px'});
-          // $(this).animate({width: 70, height: 70});
-          // $(this).delay(500).animate({width: 100, height: 100});
-      }, function(){
-        //   $(this).animate({opacity: 0}, 1000);
-          // $(this).css({border: "2px solid black"});
-          // $(this).animate({margin: '0px'});
-          // $(this).animate({width: 55, height: 55});
-      })
-    
-      // $(".block").click(function(){
-      //     var currentButton = parseInt($(this).attr('class').split(' ')[1]);
-      //     console.log("starting: ", currentButton);
-      //     var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-      //     $(`.${currentButton}`).animate({"margin": "0 10px 0 10px", opacity: 0.25}, 500);
-      //     $(`.${currentButton}`).animate({margin: "5px", opacity: 1.0 }, 500);
-      //     $(`.${currentButton}`).animate({opacity: 1.0 }, 500);
-      //   //   $(`.${currentButton}`).css({border: `2px solid ${random_color}`});
-      //     $(`.${currentButton}`).css({"background-color": `${random_color}`});
-      //     // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
-      //     // randomColor();           
-      //     while(currentButton < 18){
-      //       if(!$(`.${currentButton + 1}`).hasClass('hidden')){
-      //         $(`.${currentButton + 1}`).delay(100 * currentButton/2).animate({margin: "0 10px", opacity: 0.25}, 500);
-      //         $(`.${currentButton + 1}`).delay(100 * currentButton/2).animate({margin: "5px", opacity: 1.0 }, 500);
-      //       //   $(`.${currentButton + 1}`).css({border: `2px solid ${random_color}`});
-      //         $(`.${currentButton + 1}`).css({"background-color": `${random_color}`});
-      //         // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
-      //         currentButton += 1;
-      //       } else {
-      //         currentButton += 1;
-      //       }
-      //     // randomColor();
-      //     }
+      // $("block").hover(function(){
+      //     $(this).css({border: "2px solid white"});
+      //     $(this).css({opacity: 1});
+      //     // $(this).animate({margin: '5px'});
+      //     // $(this).animate({width: 70, height: 70});
+      //     // $(this).delay(500).animate({width: 100, height: 100});
+      // }, function(){
+      //   //   $(this).animate({opacity: 0}, 1000);
+      //     // $(this).css({border: "2px solid black"});
+      //     // $(this).animate({margin: '0px'});
+      //     // $(this).animate({width: 55, height: 55});
       // })
 
-      $(".block").mousedown(function(){
-        if($(this).css("background-color") != "rgb(255, 255, 255)"){
-          $(this).css("background-color","white");
+      // if(isInteractive){
+      $(".block").click(function(){
+        console.log("israndColor: " + isRandColor);
+          var currentButton = parseInt($(this).attr('class').split(' ')[1]);
+          console.log("starting: ", currentButton);
+          var random_color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+
+          if(isInteractive){
+
+          $(`.${currentButton}`).animate({"margin": "0 10px 0 10px", opacity: 0.25}, 500);
+          $(`.${currentButton}`).animate({margin: "5px", opacity: 1.0 }, 500);
+          $(`.${currentButton}`).animate({opacity: 1.0 }, 500);
+        //   $(`.${currentButton}`).css({border: `2px solid ${random_color}`});
+          if(isRandColor){
+            $(`.${currentButton}`).css({"background-color": `${random_color}`});
+          }
+          // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
+          // randomColor();           
+          while(currentButton < 18){
+            if(!$(`.${currentButton + 1}`).hasClass('hidden')){
+              $(`.${currentButton + 1}`).delay(100 * currentButton/2).animate({margin: "0 10px", opacity: 0.25}, 500);
+              $(`.${currentButton + 1}`).delay(100 * currentButton/2).animate({margin: "5px", opacity: 1.0 }, 500);
+            //   $(`.${currentButton + 1}`).css({border: `2px solid ${random_color}`});
+              if(isRandColor){
+                $(`.${currentButton + 1}`).css({"background-color": `${random_color}`});
+              }
+              // $(`.${currentButton}`).css({"box-shadow": `2px 22px ${random_color}`});
+              currentButton += 1;
+            } else {
+              currentButton += 1;
+            }
+          // randomColor();
+          }
         } else {
-          $(this).css({"background-color": selected_color});
+          console.log("Was not interactive, sorry.");
+        }
+      })
+
+      $(".block").mousedown(function(){
+        if(!isInteractive){
+          if($(this).css("background-color") != "rgb(255, 255, 255)"){
+            $(this).css("background-color","white");
+          } else {
+            $(this).css({"background-color": selected_color});
+          }
         }
       })
 
       $(".block").on('mousedown mouseover', function() {
-        if(down){
-          if($(this).css("background-color") != "rgb(255, 255, 255)"){
-            $(this).css("background-color","rgb(255, 255, 255)");
-          } else {
-            $(this).css({"background-color": selected_color});
+        if(!isInteractive){
+          if(down){
+            if($(this).css("background-color") != "rgb(255, 255, 255)"){
+              $(this).css("background-color","rgb(255, 255, 255)");
+            } else {
+              $(this).css({"background-color": selected_color});
+            }
           }
         }
       })

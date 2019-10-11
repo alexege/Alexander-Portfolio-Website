@@ -751,6 +751,38 @@
         }
       }
 
+    .hexagon:hover, .filled, .enter_hex:hover {
+        /* stroke-dasharray: 100; */
+        stroke-dasharray: 100;
+        animation: dash 15s linear infinite;
+    }
+
+    .filled {
+        stroke-width: 3px;
+        stroke: cyan;
+    }
+    
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 1000;
+        }
+    }
+
+    .animate_up {
+        animation: anim_up 5s linear infinite;
+    }
+
+    @-webkit-keyframes anim_up {
+        0% {
+            /* transform: translate(0, 0); */
+            color: white;
+        }
+        100% {
+            color: red;
+            transform: translate(200px, 200px);
+        }
+    }
+
     .hexagon:hover {
         /* animation-name: fade;
         animation-duration: 1s; */
@@ -789,6 +821,20 @@
         /* transform: rotate(180deg) scale(0.75);
         transition: all 0.5s ease-out; */
         
+    }
+
+    .disappear {
+        animation: disappear 3s linear;
+    }
+
+    @-webkit-keyframes disappear {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0) rotate(90deg);
+            opacity: 1;
+        }
     }
 
 .project_hexagon:hover {
@@ -1586,6 +1632,10 @@
     background-color: transparent;
     color: #0ffbf9;
     padding: 10px;
+}
+
+.menu button:focus {
+    outline: 0;
 }
 
 
