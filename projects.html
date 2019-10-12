@@ -11,7 +11,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a> -->
     
-    <div class="overlay-content" id="BlurReadContent">
+    <div class="overlay-content" id="BlurReadContent" onclick="closeNav()">
         <h1>Blurread</h1>
         <p>Blurread is a project I have been co-developing with my friend <a href="https://github.com/kianchachi">Kian Chachi</a>.</p>
         <p>During our time at Coding Dojo, we joined forces to create a unique anonymous social media platform.</p>
@@ -27,7 +27,7 @@
     <!-- SlickNotesNav -->
     <div id="slickNotesNav" class="overlay" id="SlickNotesContent">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavMiddle()">&times;</a>
-        <div class="overlay-content">
+        <div class="overlay-content" onclick="closeNavMiddle()">
             <h1>Slick Notes</h1>
             <p>Slick Notes is a project I am using to document all my notes in one convenient place.</p>
             <a href=""><img src="css/images/SlickNotesFull01.png" alt=""></a>
@@ -42,7 +42,7 @@
     <!-- JavascriptPlaygroundNav -->
     <div id="javascriptplaygroundNav" class="overlay" id="JavaScriptPlayGroundContent">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
-        <div class="overlay-content">
+        <div class="overlay-content" onclick="closeNavRight()">
             <h1>JavaScript Playground</h1>
             <p>JavaScript Playground is a bit of a sandbox of my favorite jquery animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>
             <a href=""><img src="css/images/jsplayground.png" alt=""></a>
@@ -51,11 +51,10 @@
 
     <div class="project-box grid-item">
         <div class="project" onclick="openNav()">
-        <a href=""><i class="fas fa-external-link-square-alt corner"></i></a>
+        <!-- <a href=""><i class="fas fa-external-link-square-alt corner"></i></a> -->
         <h2>Blurread</h2>
         <img src="css/images/blurread.png" alt="blurread">
-        <p>Blurread is an anonymous social media app designed to allow users to post anything they want to.</p>
-        <p>This app is meant to ...</p>
+        <p>Blurread is an anonymous social media app designed to allow users to share what's on their mind freely without fear of judgement or ridicule.</p>
         <!-- <a href=""><i class="fab fa-github"></i></a> -->
         <div class="links">
         <!-- <a href=""><i class="fab fa-github"></i></a> -->
@@ -71,13 +70,11 @@
     </div>
     <div class="project-box grid-item">
         <div class="project" onclick="openNavMiddle()">
-        <a href=""><i class="fas fa-external-link-square-alt corner"></i></a>
+        <!-- <a href=""><i class="fas fa-external-link-square-alt corner"></i></a> -->
         <h2>Slick Notes</h2>
         <img src="css/images/slicknotes2.png" alt="slicknotes">
         <p>Slick notes is an intuitive multi-platform note taking app.</p>
-        <p>The purpose of this app is to allow a user to take notes electronically.
-            I wanted to give users the ability to take notes on the fly and have a universal location where they could access them.
-        </p>
+        <p>I wanted to give users the ability to take notes on the fly and have a universal location where they could access them.</p>
         <div class="links">
             <a target="_blank" href="https://github.com/alexege/LitNotes"><i class="fab fa-github"></i></a>
             <a target="_blank" href="http://54.173.99.170"><i class="fas fa-external-link-square-alt"></i></a>
@@ -92,7 +89,7 @@
     </div>
     <div class="project-box grid-item">
         <div class="project" onclick="openNavRight()">
-        <a href=""><i class="fas fa-external-link-square-alt corner"></i></a>
+        <!-- <a href=""><i class="fas fa-external-link-square-alt corner"></i></a> -->
         <h2>JavaScript Playground</h2>
         <img src="css/images/jsplayground.png" alt="jsplayground">
         <p>JavaScript Playground is a bit of a sandbox of my favorite jquery animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>

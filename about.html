@@ -1,12 +1,13 @@
 <div class="aboutme-container">
     <h2 class="glitch">Alexander Ege</h2>
-    <img src="css/images/headshot.png" alt="headshot.png" width="200" height="200">
+    <!-- <h1 style="letter-spacing: 25px; margin:5vh 0;" class="full_name">ALEXANDER EGE</h1> -->
+    <img src="css/images/headshot.png" alt="headshot.png" width="200" height="200" id="headshot">
     <p id="about-paragraph">
-        My name is Alexander Ege and I am a Computer Engineer working out of Orange County, CA.
-        I attended Southern Illinois University Carbondale, where I earned my bachelors' of Science in Computer Engineering. 
-        After graduating in December of 2015, I began working as a Technical Rotation Associate for Trend Micro working in Network Security.
-        Since then, I have moved to Southern California where I have attended a Coding Bootcamp.
-        I am currently working as a Teaching Assistant there and hope to get a job in Web Development as a full stack developer.
+        My name is <span class="highlight">Alexander Ege</span> and I am a <span class="highlight">Computer Engineer</span> working out of Orange County, CA.
+        I attended Southern Illinois University Carbondale, where I earned my <span class="highlight">bachelors' of Science</span> in <span class="highlight">Computer Engineering</span>. 
+        After graduating in December of 2015, I began working as a <span class="highlight">Technical Rotation Associate</span> for Trend Micro working in <span class="highlight">Network Security</span>.
+        I have since moved to Southern California where I attended a Coding Bootcamp.
+        I am currently working as a <span class="highlight">Teaching Assistant</span> there and hope to get a job in Web Development as a <span class="highlight">full stack developer</span>.
     </p>
 
     <h3>Proficient In:</h3>
@@ -32,4 +33,35 @@
         <div class="skill-item">VHDL</div>
         <div class="skill-item">Cadence/Synopsys Tools</div>
     </div> -->
+    <script>
+        $(".nameContainer").css({"display":"none"});
+
+        $(".glitch").css({"top":"-500px"});
+        $(".glitch").animate({"top":"0"}, 1000);
+
+        $("img").css({"background-color": "rgb(6,174,226, 0.35)", "border-radius":"50%", "border":"3px solid cyan", "box-shadow":"0px 0px 20px cyan"})
+
+        $("#headshot").hide().delay(10).fadeIn(1000);
+        $("#about-paragraph").hide().delay(1000).fadeIn(1000);
+        $("h3").hide().delay(1500).fadeIn(1000);
+        $(".skills").hide().delay(1500).fadeIn(1000);
+
+
+        var rand = 1000;
+        var num = 0;
+        $(".skill-item").each(function(){
+            rand += 200;
+            $(this).css({"opacity":"0"})
+            if(num % 2 == 0){
+                $(this).css({"top":"-100px"});
+                $(this).animate({"top":"0px", "opacity":"1"}, rand);
+            } else {
+                $(this).css({"top":"100px"});
+                $(this).animate({"top":"0px", "opacity":"1"}, rand);
+            }
+            num += 1;
+            // var height = $(this).css("height");
+            // $(this).css({"height":"0px"}).delay(rand).animate({"height": height});
+        })
+    </script>
 </div>

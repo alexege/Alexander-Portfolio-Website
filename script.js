@@ -13,12 +13,6 @@ function ToggleMenu(){
     }
 }
 
-$(".hexagon").hover(function(){
-    // $(this).css({"stroke" : "white", "width" : "0", "height" : "0"}).delay(1000).animate({"width":"200px", "height":"175px"});
-    // $(this).css({"opacity":"0"}).animate({"opacity":"1"},2000);
-    
-});
-
 // $(".hexagon").hover(function(){
 //     if($(this).hasClass('hover_filled')){
 //         $(this).animate({"opacity":"0"});
@@ -28,28 +22,30 @@ $(".hexagon").hover(function(){
 //         $(this).addClass('hover_filled');
 //     }
 // });
-
+var counter = 0;
 $(".hexagon").click(function(){
     if($(this).hasClass('filled')){
         $(this).css({"fill":"none"})
         $(this).removeClass('filled');
         $(this).addClass('disappear');
     } else {
+        counter += 1;
         $(this).css({"fill":"rgb(6,174,226, 0.25)"})
         $(this).addClass('filled');
         $(this).removeClass('disappear');
     }
+    // console.log("coutner:", counter);
+    // if(counter > 6){
+    //     $(".hexagon:hover").css({"stroke":"lime", "fill":"black"});
+    // }
 });
 
-
-
 $(document).ready(function(){
-    flyInUpDown();
     // hideAllHexagons();
     // staggeredDissapear();
     // staggeredReappear();
     // randomlyDissapear();
-    hideOdd();
+    // hideOdd();
     // hideEven();
     // spiralHideShow();
     // colorwavefill();
@@ -63,14 +59,14 @@ $(document).ready(function(){
     moveHexToFront();
     // hideOdd();
 
-    function flyInUpDown(){
-        // $(".up").css({"color":"red", "transform":"translate(0, -500px)"});
-        $(".up").addClass("animate_up");
-    }
-
     $(".enter_hex").click(function(){
         console.log("Staggered Dissapear");
         staggeredDissapear();
+
+        $(".nameContainer").children().css({"letter-spacing":"75px"});
+        $(".nameContainer").children().stop().animate({"letter-spacing":"25px", "top":"5%", "opacity":"0"},2000);
+        $(".nameContainer").animate({"top":"-=75px"}, 3000)
+        $(".glitch").css({"opacity":"0.1"});
 
         setTimeout(function(){
             console.log("This fadeout");
@@ -85,11 +81,11 @@ $(document).ready(function(){
         // moveHexToBack();
     });
 
-    $(".enter_hex").hover(function(){
-        $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" ,"stroke-width":"3"});
-    }, function(){
-        $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" , "stroke-width":"0"});
-    })
+    // $(".enter_hex").hover(function(){
+    //     $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" ,"stroke-width":"3"});
+    // }, function(){
+    //     $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" , "stroke-width":"0"});
+    // })
 
     $(".project_hex1").click(function(){
         console.log("Content");
@@ -528,23 +524,23 @@ $(document).ready(function(){
         console.log("staggeredReappear start");
 
         // $(`.row1`).finish().animate({"opacity" : "0"});
-        // $(`.row2`).finish().delay(200).animate({"opacity" : "0.1"});
-        // $(`.row3`).finish().delay(400).animate({"opacity" : "0.15"});
-        // $(`.row4`).finish().delay(600).animate({"opacity" : "0.2"});
-        // $(`.row5`).finish().delay(800).animate({"opacity" : "0.25"});
-        // $(`.row6`).finish().delay(1000).animate({"opacity" : "0.5"});
-        // $(`.row7`).finish().delay(1200).animate({"opacity" : "0.75"});
+        // $(`.row2`).finish().delay(200).animate({"opacity" : "0.65"});
+        // $(`.row3`).finish().delay(400).animate({"opacity" : "0.7"});
+        // $(`.row4`).finish().delay(600).animate({"opacity" : "0.75"});
+        // $(`.row5`).finish().delay(800).animate({"opacity" : "0.8"});
+        // $(`.row6`).finish().delay(1000).animate({"opacity" : "0.85"});
+        // $(`.row7`).finish().delay(1200).animate({"opacity" : "0.9"});
         // $(`.row8`).finish().delay(1400).animate({"opacity" : "1"});
         
         $(`.row1`).finish().animate({"opacity" : "1"});
         $(`.row3`).finish().delay(500).animate({"opacity" : "1"},1000);
-        $(`.row5`).finish().delay(500).animate({"opacity" : "1"},1000);
-        $(`.row7`).finish().delay(500).animate({"opacity" : "1"},1000);
+        $(`.row5`).finish().delay(500).animate({"opacity" : "1"},3000);
+        $(`.row7`).finish().delay(500).animate({"opacity" : "1"},5000);
         
-        // $(`.row2`).finish().delay(3000).animate({"opacity" : "1"},1000);
-        // $(`.row4`).finish().delay(3000).animate({"opacity" : "1"},1000);
-        // $(`.row6`).finish().delay(3000).animate({"opacity" : "1"},1000);
-        // $(`.row8`).finish().delay(3000).animate({"opacity" : "1"},1000);
+        $(`.row2`).finish().delay(3000).animate({"opacity" : "0.25"},5000);
+        $(`.row4`).finish().delay(3000).animate({"opacity" : "0.25"},5000);
+        $(`.row6`).finish().delay(3000).animate({"opacity" : "0.25"},5000);
+        $(`.row8`).finish().delay(3000).animate({"opacity" : "0.25"},5000);
         console.log("staggeredReappear End");
     }
 
@@ -855,6 +851,7 @@ $(document).ready(function(){
 
     $("#ajax_about_page").click(function(){
         $.ajax({url: "about.html", success: function(result){
+            console.log("About page is loadig in")
             $("#main_content").html(result);
             // if(state != 1){
             //     // populate background
