@@ -34,19 +34,46 @@
         <div class="skill-item">Cadence/Synopsys Tools</div>
     </div> -->
     <script>
+
+        $(`.row1`).finish().animate({"opacity" : "1"});
+        $(`.row3`).finish().delay(500).animate({"opacity" : "1"},1000);
+        $(`.row5`).finish().delay(500).animate({"opacity" : "1"},3000);
+        $(`.row7`).finish().delay(500).animate({"opacity" : "1"},5000);
+        
+        $(`.row2`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        $(`.row4`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        $(`.row6`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        $(`.row8`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+
+        $(".email").css({"opacity":"0"});
+        $(".media-links").css({"opacity":"0"});
+        $(".navbar").css({"opacity":"0"});
+        $(".corner-bottom-left").css({"opacity":"0"});
+        $(".corner-bottom-right").css({"opacity":"0"});
+        $(".corner-top-right").css({"opacity":"0"});
+        $(".corner-top-left").css({"opacity":"0"});
+
+        $(".email").animate({"opacity":"1"}, 5000);
+        $(".media-links").animate({"opacity":"1"}, 5000);
+        $(".navbar").animate({"opacity":"1"}, 5000);
+        $(".corner-bottom-left").animate({"opacity":"1"}, 5000);
+        $(".corner-bottom-right").animate({"opacity":"1"}, 5000);
+        $(".corner-top-right").animate({"opacity":"1"}, 5000);
+        $(".corner-top-left").animate({"opacity":"1"}, 5000);
+
         $(".nameContainer").css({"display":"none"});
 
         $(".glitch").css({"top":"-500px"});
         $(".glitch").animate({"top":"0"}, 1000);
 
-        $("img").css({"background-color": "rgb(6,174,226, 0.35)", "border-radius":"50%", "border":"3px solid cyan", "box-shadow":"0px 0px 20px cyan"})
+        $("img").css({"background-color": "rgb(6,174,226, 0.35)", "border-radius":"50%", "border":"3px solid cyan", "box-shadow":"0px 0px 30px cyan"})
 
-        $("#headshot").hide().delay(10).fadeIn(1000);
-        $("#about-paragraph").hide().delay(1000).fadeIn(1000);
+        $("#headshot").hide().delay(1000).fadeIn(1000);
+        $("#about-paragraph").hide().delay(1500).fadeIn(1000);
         $("h3").hide().delay(1500).fadeIn(1000);
         $(".skills").hide().delay(1500).fadeIn(1000);
 
-
+    setTimeout(function(){
         var rand = 1000;
         var num = 0;
         $(".skill-item").each(function(){
@@ -63,5 +90,6 @@
             // var height = $(this).css("height");
             // $(this).css({"height":"0px"}).delay(rand).animate({"height": height});
         })
+    }, 1000)
     </script>
 </div>

@@ -15,7 +15,7 @@
         <h1>Blurread</h1>
         <p>Blurread is a project I have been co-developing with my friend <a href="https://github.com/kianchachi">Kian Chachi</a>.</p>
         <p>During our time at Coding Dojo, we joined forces to create a unique anonymous social media platform.</p>
-        <p>The site was born early into our python stack and has seen several significant imporvements over each iteration.</p>
+        <p>The site was born early into our python stack and has seen several significant imporvements since.</p>
         <a href="css\images\BlurReadFull01.png"><img src="css/images/BlurReadFull01.png" alt=""></a>
         <a href="css\images\BlurReadFull02.png"><img src="css/images/BlurReadFull02.png" alt=""></a>
         <p>Our app is currently live and can be found at the following link</p>
@@ -112,6 +112,24 @@
 <!-- <script src="script.js"></script> -->
 
 <script>
+
+    var rand = 1000;
+    var num = 0;
+    $(".project-box").each(function(){
+        rand += 200;
+        $(this).css({"opacity":"0"})
+        if(num % 2 == 0){
+            $(this).css({"top":"-100px"});
+            $(this).animate({"top":"0px", "opacity":"1"}, rand);
+        } else {
+            $(this).css({"top":"100px"});
+            $(this).animate({"top":"0px", "opacity":"1"}, rand);
+        }
+        num += 1;
+        // var height = $(this).css("height");
+        // $(this).css({"height":"0px"}).delay(rand).animate({"height": height});
+    })
+
     function openNav() {
         document.getElementById("blurreadNav").style.width = "100%";
     }
