@@ -47,7 +47,7 @@
 
         $(".email").css({"opacity":"0"});
         $(".media-links").css({"opacity":"0"});
-        $(".navbar").css({"opacity":"0"});
+        // $(".navbar").css({"opacity":"0"});
         $(".corner-bottom-left").css({"opacity":"0"});
         $(".corner-bottom-right").css({"opacity":"0"});
         $(".corner-top-right").css({"opacity":"0"});
@@ -69,7 +69,8 @@
         $("img").css({"background-color": "rgb(6,174,226, 0.35)", "border-radius":"50%", "border":"3px solid cyan", "box-shadow":"0px 0px 30px cyan"})
 
         $("#headshot").hide().delay(1000).fadeIn(1000);
-        $("#about-paragraph").hide().delay(1500).fadeIn(1000);
+        // $("#about-paragraph").hide().delay(1500).fadeIn(1000);
+        $("#about-paragraph").css({"position":"relative", "top": "100vh"}).delay(1200).animate({"top":"0px"},1200);
         $("h3").hide().delay(1500).fadeIn(1000);
         $(".skills").hide().delay(1500).fadeIn(1000);
 

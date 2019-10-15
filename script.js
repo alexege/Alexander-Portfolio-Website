@@ -99,11 +99,12 @@ $(document).ready(function(){
         // moveHexToBack();
     });
 
-    // $(".enter_hex").hover(function(){
-    //     $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" ,"stroke-width":"3"});
-    // }, function(){
-    //     $(this).stop().css({"stroke":"rgb(6,174,226, 0.5)" , "stroke-width":"0"});
-    // })
+    $(".glow_border").hide()
+    $(".enter_hex").hover(function(){
+        $(".glow_border").hide().fadeIn(50);
+    }, function(){
+        $(".glow_border").fadeOut(50);
+    })
 
     $(".project_hex1").click(function(){
         console.log("Content");
@@ -504,7 +505,7 @@ $(document).ready(function(){
 
     function staggeredDissapear(){
         console.log("staggeredDissapear start");
-        $(".enter_hex").animate({"opacity": "0"});
+        $(".enter_hex").clearQueue().animate({"opacity": "0"});
         $(".row1").animate({"opacity" : "0"});
         $(".row2").delay(200).animate({"opacity" : "0"});
         $(".row3").delay(400).animate({"opacity" : "0"});
