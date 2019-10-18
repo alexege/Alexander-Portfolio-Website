@@ -474,14 +474,14 @@
 .resume h3 {
     /* color: rgb(100, 255, 218); */
     color: rgb(6,174,226);
-    font-size: 20px;
-    border-bottom: 2px solid white;
-    margin: 5px 0;
+    font-size: 24px;
+    border-bottom: 1.5px solid white;
+    margin: 7px 0;
 }
 
 .resume h5 {
     color: #06aae2;
-    font-size: 16px;
+    font-size: 20px;
     /* border-bottom: 2px solid white; */
 }
 
@@ -520,6 +520,11 @@
     text-decoration: none;
     font-style: none;
     color: #06aae2;
+}
+
+.resume p {
+    font-size: 15px;
+    margin-left: 5px;
 }
 
 .right {

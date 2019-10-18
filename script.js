@@ -412,6 +412,9 @@ $(document).ready(function(){
         // , .Mean-description, .Webfunds-description, .CSharp-description");            
     });
 
+    $("#ajax_home_page").click(function(){
+        window.location.replace("/")
+    });
     $("#ajax_resume_page").click(function(){
         hideVisibleHex();
     });
