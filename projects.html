@@ -44,8 +44,13 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
         <div class="overlay-content" onclick="closeNavRight()">
             <h1>JavaScript Playground</h1>
-            <p>JavaScript Playground is a bit of a sandbox of my favorite jquery animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>
+            <p>JavaScript Playground is a bit of a sandbox of my favorite javascript animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>
             <a href=""><img src="css/images/jsplayground.png" alt=""></a>
+            <p>A user can draw their own custom picture using the colors provided, or have a randmoly generated color change each block.</p>
+            <p>Each block sends information to the next block to continue an animation from wherever a block is clicked.</p>
+            <p>When a user is happy with their colorscheme,they can click animate to see it move.</p>
+            <p>Clicking the randomize pattern button will randomize how many blocks are visible.</p><br>
+            <p>Check this project out by clicking <a href="javascript:;" id="playButton">Play</a></p>
         </div>
     </div>
 
@@ -95,7 +100,7 @@
         <p>JavaScript Playground is a bit of a sandbox of my favorite jquery animations. I am always looking to add cool new effects and will update this page frequently with new features.</p>
         <div class="links">
             <a target="_blank" href="https://github.com/alexege/DynamicGridHexagons"><i class="fab fa-github"></i></a>
-            <!-- <a target="_blank" href=""><i class="fas fa-external-link-square-alt"></i></a> -->
+            <a href="#" id="playButton2" ><i class="fas fa-external-link-square-alt"></i></a>
             <!-- <a href=""><i class="fab fa-github"></i></a> -->
         </div>
         <div class="technologies">
@@ -112,6 +117,32 @@
 <!-- <script src="script.js"></script> -->
 
 <script>
+
+    var elementToClick = document.querySelector("#playButton");
+    // or ...Selector(".your-element-class");
+    
+    elementToClick.addEventListener("click", function(){
+        var anchor = document.querySelector("a#ajax_play_page");
+        // or ...Selector("a.your-element-class");
+        // any proper css selector will be sufficient
+        $(anchor).click();    
+    
+        console.log("The content of the node:", anchor.innerHTML);
+    });
+    
+    var elementToClick = document.querySelector("#playButton2");
+    // or ...Selector(".your-element-class");
+    
+    elementToClick.addEventListener("click", function(){
+        var anchor = document.querySelector("a#ajax_play_page");
+        // or ...Selector("a.your-element-class");
+        // any proper css selector will be sufficient
+        $(anchor).click();    
+    
+        console.log("The content of the node:", anchor.innerHTML);
+    });
+
+
 
     var rand = 1000;
     var num = 0;

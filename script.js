@@ -99,12 +99,12 @@ $(document).ready(function(){
         // moveHexToBack();
     });
 
-    $(".glow_border").hide()
-    $(".enter_hex").hover(function(){
-        $(".glow_border").hide().fadeIn(50);
-    }, function(){
-        $(".glow_border").fadeOut(50);
-    })
+    // $(".glow_border").hide()
+    // $(".enter_hex").hover(function(){
+    //     $(".glow_border").hide().fadeIn(250);
+    // }, function(){
+    //     $(".glow_border").fadeOut(250);
+    // })
 
     $(".project_hex1").click(function(){
         console.log("Content");
