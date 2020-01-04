@@ -63,6 +63,8 @@ $(document).ready(function(){
     // singleRandFill();
     // setInterval(randomFade, 10000);
     // setInterval(randFade, 100);
+
+    $("#container").hide().delay(1000).fadeIn();
     
     moveHexToFront();
     // hideOdd();
@@ -79,8 +81,8 @@ $(document).ready(function(){
         $(".glitch").css({"opacity":"0.1"});
 
         setTimeout(function(){
-            console.log("This fadeout");
-            $(this).fadeOut();
+            // console.log("This fadeout");
+            // $(this).fadeOut();
 
             for(var i = 1; i < 8; i++){
                 $(`.row${i}`).css({"opacity":"0"});
@@ -88,12 +90,15 @@ $(document).ready(function(){
 
         }, 2000);
 
-       
-        
-        $(this).fadeOut();
+        // $(this).fadeOut();
         setTimeout(function(){
             $("#ajax_about_page").click();
         }, 2000);
+
+        $("#container").fadeOut();
+
+        // document.getElementById('container').style.display = 'none';
+
         // hideVisibleHex();
         // randomlyDissapear();
         // moveHexToBack();
@@ -448,6 +453,8 @@ $(document).ready(function(){
     function moveHexToFront(){
         $("#screen").css({"opacity" : "1"})
         $(".hexagon").animate({"opacity": "0", "z-index" : "999999"});
+        $("#container").fadeIn();
+
         staggeredReappear2();
         // animateIn();
     }
@@ -508,7 +515,8 @@ $(document).ready(function(){
 
     function staggeredDissapear(){
         console.log("staggeredDissapear start");
-        $(".enter_hex").clearQueue().animate({"opacity": "0"});
+        // $(".enter_hex").clearQueue().animate({"opacity": "0"});
+        $(".enter_hex").animate({"opacity": "0"});
         $(".row1").animate({"opacity" : "0"});
         $(".row2").delay(200).animate({"opacity" : "0"});
         $(".row3").delay(400).animate({"opacity" : "0"});
@@ -571,7 +579,7 @@ $(document).ready(function(){
     }
 
     function animateIn(){
-
+        console.log("AnimaeIN")
         $(".row1").finish().animate({"opacity" : "1"}, 1000);
         $(".row2").finish().delay(500).animate({"opacity" : "0.7"}, 1000);
         $(".row3").finish().delay(1500).animate({"opacity" : "0.5"}, 1000);
@@ -914,8 +922,8 @@ $(document).ready(function(){
         }});
     });
 
-    $("#ajax_workhistory_page").click(function(){
-        $.ajax({url: "workhistory.html", success: function(result){
+    $("#ajax_hobbies_page").click(function(){
+        $.ajax({url: "hobbies.html", success: function(result){
             $("#main_content").html(result);
         }});
     });
@@ -936,6 +944,68 @@ $(document).ready(function(){
             $("#main_content").html(result);
         }});
     });
+
+
+
+
+
+    // TypeWriter Effect
+    // List of sentences
+var _CONTENT = [ "Web Developer", "Computer Engineer", "Unicyclist", "Software Developer"];
+
+// Current sentence being processed
+var _PART = 0;
+
+// Character number of the current sentence being processed 
+var _PART_INDEX = 0;
+
+// Holds the handle returned from setInterval
+var _INTERVAL_VAL;
+
+// Element that holds the text
+var _ELEMENT = document.querySelector("#text");
+
+// Implements typing effect
+function Type() { 
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX++;
+
+	// If full sentence has been displayed then start to delete the sentence after some time
+	if(text === _CONTENT[_PART]) {
+		clearInterval(_INTERVAL_VAL);
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Delete, 50);
+		}, 1000);
+	}
+}
+
+// Implements deleting effect
+function Delete() {
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX--;
+
+	// If sentence has been deleted then start to display the next sentence
+	if(text === '') {
+		clearInterval(_INTERVAL_VAL);
+
+		// If last sentence then display the first one, else move to the next
+		if(_PART == (_CONTENT.length - 1))
+			_PART = 0;
+		else
+			_PART++;
+		_PART_INDEX = 0;
+
+		// Start to display the next sentence after some time
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Type, 100);
+		}, 800);
+	}
+}
+
+// Start the typing effect on load
+_INTERVAL_VAL = setInterval(Type, 150);
 
 
 });

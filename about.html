@@ -1,5 +1,10 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- ajax library -->
+<link rel="stylesheet" href="style.css">
+
 <div class="aboutme-container">
-    <h2 class="glitch">Alexander Ege</h2>
+    <!-- <h2 class="glitch">Alexander Ege</h2> -->
+    <h2 class="Name">Alexander Ege</h2>
     <!-- <h1 style="letter-spacing: 25px; margin:5vh 0;" class="full_name">ALEXANDER EGE</h1> -->
     <img src="css/images/headshot.png" alt="headshot.png" width="200" height="200" id="headshot">
     <p id="about-paragraph">
@@ -13,13 +18,13 @@
     <h3>Proficient In:</h3>
 
     <div class="skills">
-        <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/csharp/"><div class="skill-item">C#</div></a>
-        <a target="_blank" href="https://dotnet.microsoft.com/apps/aspnet"><div class="skill-item">ASP.NET</div></a>
-        <a target="_blank" href="https://www.python.org/"><div class="skill-item">Python</div></a>
-        <a target="_blank" href="https://en.wikipedia.org/wiki/HTML"><div class="skill-item">HTML/CSS</div></a>
-        <a target="_blank" href="https://en.wikipedia.org/wiki/JavaScript"><div class="skill-item">JavaScript/JQuery</div></a>
-        <a target="_blank" href="https://www.geeksforgeeks.org/difference-between-sql-and-nosql/"><div class="skill-item">SQL/NOSQL</div></a>
-        <a target="_blank" href="https://aws.amazon.com/"><div class="skill-item">AWS</div></a>
+        <div class="skill-item">C#</div>
+        <div class="skill-item">ASP.NET</div>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">HTML/CSS</div>
+        <div class="skill-item">JavaScript/JQuery</div>
+        <div class="skill-item">SQL/NOSQL</div>
+        <div class="skill-item">AWS</div>
         <!-- <div class="skill-item">C++</div> -->
     </div>
 
@@ -35,15 +40,15 @@
     </div> -->
     <script>
 
-        $(`.row1`).finish().animate({"opacity" : "1"});
-        $(`.row3`).finish().delay(500).animate({"opacity" : "1"},1000);
-        $(`.row5`).finish().delay(500).animate({"opacity" : "1"},3000);
-        $(`.row7`).finish().delay(500).animate({"opacity" : "1"},5000);
+        // $(`.row1`).finish().animate({"opacity" : "1"});
+        // $(`.row3`).finish().delay(500).animate({"opacity" : "1"},1000);
+        // $(`.row5`).finish().delay(500).animate({"opacity" : "1"},3000);
+        // $(`.row7`).finish().delay(500).animate({"opacity" : "1"},5000);
         
-        $(`.row2`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
-        $(`.row4`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
-        $(`.row6`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
-        $(`.row8`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        // $(`.row2`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        // $(`.row4`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        // $(`.row6`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
+        // $(`.row8`).finish().delay(1000).animate({"opacity" : "0.25"},5000);
 
         $(".email").css({"opacity":"0"});
         $(".media-links").css({"opacity":"0"});
